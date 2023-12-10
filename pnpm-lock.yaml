@@ -19,7 +19,7 @@ dependencies:
     version: 2.6.4
   next:
     specifier: 14.0.4
-    version: 14.0.4(@babel/core@7.23.5)(react-dom@18.0.0)(react@18.0.0)
+    version: 14.0.4(@babel/core@7.23.5)(react-dom@18.0.0)(react@18.0.0)(sass@1.69.5)
   next-themes:
     specifier: ^0.2.1
     version: 0.2.1(next@14.0.4)(react-dom@18.0.0)(react@18.0.0)
@@ -29,6 +29,9 @@ dependencies:
   react-dom:
     specifier: ^18
     version: 18.0.0(react@18.0.0)
+  sass:
+    specifier: ^1.69.5
+    version: 1.69.5
   tailwind-merge:
     specifier: ^2.1.0
     version: 2.1.0
@@ -1667,6 +1670,10 @@ packages:
     engines: {node: '>= 4'}
     dev: true
 
+  /immutable@4.3.4:
+    resolution: {integrity: sha512-fsXeu4J4i6WNWSikpI88v/PcVflZz+6kMhUfIwc5SY+poQRPnaf5V7qds6SUyUN3cVxEzuCab7QIoLOQ+DQ1wA==}
+    dev: false
+
   /import-fresh@3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
     engines: {node: '>=6'}
@@ -2071,12 +2078,12 @@ packages:
       react: '*'
       react-dom: '*'
     dependencies:
-      next: 14.0.4(@babel/core@7.23.5)(react-dom@18.0.0)(react@18.0.0)
+      next: 14.0.4(@babel/core@7.23.5)(react-dom@18.0.0)(react@18.0.0)(sass@1.69.5)
       react: 18.0.0
       react-dom: 18.0.0(react@18.0.0)
     dev: false
 
-  /next@14.0.4(@babel/core@7.23.5)(react-dom@18.0.0)(react@18.0.0):
+  /next@14.0.4(@babel/core@7.23.5)(react-dom@18.0.0)(react@18.0.0)(sass@1.69.5):
     resolution: {integrity: sha512-qbwypnM7327SadwFtxXnQdGiKpkuhaRLE2uq62/nRul9cj9KhQ5LhHmlziTNqUidZotw/Q1I9OjirBROdUJNgA==}
     engines: {node: '>=18.17.0'}
     hasBin: true
@@ -2099,6 +2106,7 @@ packages:
       postcss: 8.4.31
       react: 18.0.0
       react-dom: 18.0.0(react@18.0.0)
+      sass: 1.69.5
       styled-jsx: 5.1.1(@babel/core@7.23.5)(react@18.0.0)
       watchpack: 2.4.0
     optionalDependencies:
@@ -2489,6 +2497,16 @@ packages:
       get-intrinsic: 1.2.2
       is-regex: 1.1.4
     dev: true
+
+  /sass@1.69.5:
+    resolution: {integrity: sha512-qg2+UCJibLr2LCVOt3OlPhr/dqVHWOa9XtZf2OjbLs/T4VPSJ00udtgJxH3neXZm+QqX8B+3cU7RaLqp1iVfcQ==}
+    engines: {node: '>=14.0.0'}
+    hasBin: true
+    dependencies:
+      chokidar: 3.5.3
+      immutable: 4.3.4
+      source-map-js: 1.0.2
+    dev: false
 
   /scheduler@0.21.0:
     resolution: {integrity: sha512-1r87x5fz9MXqswA2ERLo0EbOAU74DpIUO090gIasYTqlVoJeMcl+Z1Rg7WHz+qtPujhS/hGIt9kxZOYBV3faRQ==}
