@@ -1,21 +1,29 @@
-'use client'
+"use client";
 
-import React from 'react'
-import {useTheme} from "next-themes";
+import React, { useEffect } from "react";
+import { useTheme } from "next-themes";
 
 function ThemeToggle() {
-    const {theme, setTheme } = useTheme()
-    const onToggle = () => {
-        setTheme(theme === 'light' ? 'dark' : 'light')
-    }
+  const { theme, setTheme } = useTheme();
 
-    return (
-        <button onClick={onToggle}>
-            {theme === 'light' ? '🌜' : '🌞'}
+  const onToggle = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
 
-            <span className="sr-only">Toggle theme</span>
-        </button>
-    )
+  useEffect(() => {
+    console.log(`🆘 components/layout/NavBar/ThemeToggle.tsx`); // eslint-disable-line
+    console.log(theme); // eslint-disable-line
+    console.log('%c => theme ', 'background: #0095FF; color: #fff'); // eslint-disable-line
+    console.log(new Date()); // eslint-disable-line
+  }, [theme]);
+
+  return (
+    <button onClick={onToggle} type="button">
+      {theme === "light" ? "🌜" : "🌞"}
+
+      <span className="sr-only">Toggle theme</span>
+    </button>
+  );
 }
 
-export default ThemeToggle
+export default ThemeToggle;
