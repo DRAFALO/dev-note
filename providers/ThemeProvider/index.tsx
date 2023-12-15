@@ -1,15 +1,14 @@
-'use client'
+"use client";
 
-import React from 'react'
-import { ThemeProvider } from 'next-themes'
-import {ThemeProviderProps} from 'next-themes/dist/types'
+import React from "react";
+import { ThemeProvider } from "next-themes";
+import { ThemeProviderProps } from "next-themes/dist/types";
 
-function Provider({ children, ...props}: ThemeProviderProps) {
+function Provider({ children, ...props }: ThemeProviderProps) {
     return (
-        <ThemeProvider {...props}>
-            {children}
-        </ThemeProvider>
-    )
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        <ThemeProvider {...props}>{children}</ThemeProvider>
+    );
 }
 
-export default Provider
+export default Provider;
