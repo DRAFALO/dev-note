@@ -5,7 +5,6 @@ import Link from "next/link";
 import SVGTag from "@/components/SVGTag";
 
 import { ROUTES } from "@/constants/routes";
-import SVG_PATH from "@/public/svg";
 
 const ThemeToggle = dynamic(() => import("./ThemeToggle"), {
   ssr: false,
@@ -17,7 +16,7 @@ function NavBar() {
       <div className="container grid grid-cols-12">
         <div className="col-span-6">
           <Link href={ROUTES.HOME.LINK} title={ROUTES.HOME.TITLE}>
-            <SVGTag src={SVG_PATH.LOGO} width={40} height={40} />
+            <SVGTag src="/svg/logo.svg#logo" width={40} height={40} />
           </Link>
         </div>
 
