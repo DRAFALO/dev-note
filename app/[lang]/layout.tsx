@@ -1,14 +1,20 @@
 import React from "react";
+// import { MagicMotion } from "react-magic-motion";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 import NavBar from "@/components/layout/NavBar";
 
+import { i18n } from "@/dictionaries/i18n-config";
 import ThemeProvider from "@/providers/ThemeProvider";
 
 import "./globals.scss";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+
+export async function generateStaticParams() {
+  return i18n.locales.map((locale) => ({ lang: locale }));
+}
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,11 +23,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: { lang: string };
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={params.lang} suppressHydrationWarning>
       <body className={inter.variable}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <NavBar />
