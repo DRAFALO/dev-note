@@ -5,10 +5,10 @@ import { ThemeProvider } from "next-themes";
 import { ThemeProviderProps } from "next-themes/dist/types";
 
 function Provider({ children, ...props }: ThemeProviderProps) {
-    return (
-        // eslint-disable-next-line react/jsx-props-no-spreading
-        <ThemeProvider {...props}>{children}</ThemeProvider>
-    );
+  return (
+    // eslint-disable-next-line react/jsx-props-no-spreading
+    <ThemeProvider {...props}>{children}</ThemeProvider>
+  );
 }
 
 export default Provider;
