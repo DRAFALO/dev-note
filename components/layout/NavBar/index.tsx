@@ -1,16 +1,19 @@
 import React from "react";
-import dynamic from "next/dynamic";
 import Link from "next/link";
 
+import LangToggle from "@/components/layout/NavBar/LangToggle";
+import ThemeToggle from "@/components/layout/NavBar/ThemeToggle";
 import SVGTag from "@/components/SVGTag";
 
 import { ROUTES } from "@/constants/routes";
 
-const ThemeToggle = dynamic(() => import("./ThemeToggle"), {
-  ssr: false,
-});
+interface NavBarProps {
+  lang: string;
+}
 
-function NavBar() {
+function NavBar(props: NavBarProps) {
+  const { lang } = props;
+
   return (
     <nav className="py-3">
       <div className="container grid grid-cols-12">
@@ -20,12 +23,14 @@ function NavBar() {
           </Link>
         </div>
 
-        <div className="col-span-6 flex justify-end">
+        <div className="col-span-6 flex items-center justify-end gap-4">
           <ThemeToggle />
+
+          <LangToggle lang={lang} />
         </div>
       </div>
     </nav>
   );
 }
 
-export default NavBar;
+export default React.memo(NavBar);
