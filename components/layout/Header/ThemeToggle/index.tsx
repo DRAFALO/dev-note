@@ -14,9 +14,11 @@ function ThemeToggle() {
   };
 
   return (
-    <label className={sx.switch} htmlFor="theme-toggle">
-      <span className="hidden">Theme toggle</span>
-
+    <label
+      className={sx.switch}
+      htmlFor="theme-toggle"
+      aria-label="Theme Toggle"
+    >
       <input
         type="checkbox"
         id="theme-toggle"
