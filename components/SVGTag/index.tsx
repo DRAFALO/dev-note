@@ -24,4 +24,4 @@ SVGTag.defaultProps = {
   className: "",
 };
 
-export default SVGTag;
+export default React.memo(SVGTag);

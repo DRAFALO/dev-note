@@ -11,4 +11,4 @@ function Provider({ children, ...props }: ThemeProviderProps) {
   );
 }
 
-export default Provider;
+export default React.memo(Provider);

@@ -3,6 +3,11 @@ export enum LocaleEnum {
   EN = "en",
 }
 
+export enum MappingLocaleEnum {
+  vi = "Việt Nam",
+  en = "English",
+}
+
 export interface LocaleKeys {
   hello: string;
 }
