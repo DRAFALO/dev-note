@@ -6,6 +6,7 @@ interface SVGTagProps {
   className?: string;
   width?: number;
   height?: number;
+  ["aria-label"]: string;
 }
 
 function SVGTag(props: SVGTagProps) {

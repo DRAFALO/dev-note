@@ -5,10 +5,10 @@
         "node": true
     },
     "extends": [
-        "plugin:react/recommended",
         "airbnb",
         "airbnb-typescript",
         "airbnb/hooks",
+        "plugin:react/recommended",
         "plugin:prettier/recommended",
         "plugin:@next/next/recommended"
     ],

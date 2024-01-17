@@ -12,6 +12,14 @@ const config: Config = {
       center: true,
       padding: "16px",
     },
+    fontSize: {
+      "heading-1": ["2.5rem", { lineHeight: "1.8", fontWeight: 500 }],
+      "heading-2": ["2rem", { lineHeight: "1.6", fontWeight: 500 }],
+      "heading-3": ["1.75rem", { fontWeight: 500 }],
+      "heading-4": ["1.5rem", { fontWeight: 500 }],
+      "heading-5": ["1.25rem", { fontWeight: 500 }],
+      "heading-6": ["1.15rem", { fontWeight: 500 }],
+    },
     extend: {
       colors: {
         border: "hsl(var(--border))",
@@ -71,6 +79,10 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
+      zIndex: {
+        header: "100",
+        modal: "9999",
       },
     },
   },

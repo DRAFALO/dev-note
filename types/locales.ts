@@ -1,3 +1,5 @@
+import JsonDictionary from "@/dictionaries/en.json";
+
 export enum LocaleEnum {
   VI = "vi",
   EN = "en",
@@ -8,6 +10,4 @@ export enum MappingLocaleEnum {
   en = "English",
 }
 
-export interface LocaleKeys {
-  hello: string;
-}
+export type LocaleKeys = Record<keyof typeof JsonDictionary, string>;

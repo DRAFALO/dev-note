@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/select";
 
 import { i18n } from "@/dictionaries/i18n-config";
+import renderLinkByLocale from "@/lib/renderLinkByLocale";
 import { LocaleEnum, MappingLocaleEnum } from "@/types/locales";
 
 interface LangToggleProps {
@@ -23,10 +24,10 @@ function LangToggle(props: LangToggleProps) {
   const router = useRouter();
 
   const onRenderLinkByLocale = (locale: LocaleEnum) => {
-    if (!pathname) return "/";
-    const segments = pathname.split("/");
-    segments[1] = locale;
-    return segments.join("/");
+    return renderLinkByLocale({
+      link: pathname,
+      locale,
+    });
   };
 
   const onChangeLocale = (locale: LocaleEnum) => {
