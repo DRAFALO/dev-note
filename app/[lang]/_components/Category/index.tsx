@@ -2,29 +2,16 @@ import React from "react";
 
 import { Button } from "@/components/ui/button";
 
+import { CategoryEntity } from "@/types/categories";
 import { LocaleKeys } from "@/types/locales";
 
 interface CategoryProps {
   dictionary: LocaleKeys;
+  categories: CategoryEntity[];
 }
 
-const CATEGORY = [
-  "review",
-  "javascript",
-  "typescript",
-  "react",
-  "nextjs",
-  "tailwindcss",
-  "css",
-  "html",
-  "user experience",
-  "state",
-  "programming",
-  "performance",
-];
-
 function Category(props: CategoryProps) {
-  const { dictionary } = props;
+  const { dictionary, categories } = props;
 
   return (
     <section className="container my-4">
@@ -32,9 +19,9 @@ function Category(props: CategoryProps) {
         {dictionary["Search blog by topics"]}
       </h3>
       <div className=" flex flex-wrap gap-3">
-        {CATEGORY.map((category) => (
-          <Button key={category} variant="secondary">
-            {category}
+        {categories.map((category) => (
+          <Button key={category.name} variant="secondary">
+            {category.name}
           </Button>
         ))}
       </div>
