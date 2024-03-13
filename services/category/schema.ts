@@ -1,13 +1,13 @@
-import { z } from "zod";
+import { z } from 'zod'
 
-import { APICategoryResponse, CategoryEntity } from "@/types/categories";
+import { APICategoryResponse, CategoryEntity } from '@/types/categories'
 
 export const CategorySchema: z.ZodType<CategoryEntity> = z.lazy(() =>
   z.object({
     _id: z.string(),
     name: z.string(),
   }),
-);
+)
 
 export const APICategorySchema: z.ZodType<APICategoryResponse> = z.lazy(() =>
   z.object({
@@ -15,4 +15,4 @@ export const APICategorySchema: z.ZodType<APICategoryResponse> = z.lazy(() =>
     page: z.number(),
     total: z.number(),
   }),
-);
+)
