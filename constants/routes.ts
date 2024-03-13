@@ -1,10 +1,10 @@
 export const ROUTES = {
   HOME: {
-    LINK: "/",
-    TITLE: "DevNote",
+    LINK: '/',
+    TITLE: 'DevNote',
   },
   SIGN_UP: {
-    LINK: "/sign-up",
-    TITLE: "Sign Up",
+    LINK: '/sign-up',
+    TITLE: 'Sign Up',
   },
-};
+}

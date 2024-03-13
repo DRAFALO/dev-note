@@ -1,20 +1,20 @@
-import { LocaleEnum } from "@/types/locales";
+import { LocaleEnum } from '@/types/locales'
 
 interface Props {
-  locale: LocaleEnum;
-  link: string;
+  locale: LocaleEnum
+  link: string
 }
 
 function renderLinkByLocale(props: Props) {
-  const { locale, link } = props;
+  const { locale, link } = props
 
-  if (!link) return `/${locale}`;
+  if (!link) return `/${locale}`
 
-  const segments = link.split("/");
+  const segments = link.split('/')
 
-  segments[1] = locale;
+  segments[1] = locale
 
-  return segments.join("/");
+  return segments.join('/')
 }
 
-export default renderLinkByLocale;
+export default renderLinkByLocale

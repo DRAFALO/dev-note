@@ -1,13 +1,13 @@
-import JsonDictionary from "@/dictionaries/en.json";
+import JsonDictionary from '@/dictionaries/en.json'
 
 export enum LocaleEnum {
-  VI = "vi",
-  EN = "en",
+  VI = 'vi',
+  EN = 'en',
 }
 
 export enum MappingLocaleEnum {
-  vi = "Việt Nam",
-  en = "English",
+  vi = 'Việt Nam',
+  en = 'English',
 }
 
-export type LocaleKeys = Record<keyof typeof JsonDictionary, string>;
+export type LocaleKeys = Record<keyof typeof JsonDictionary, string>

@@ -1,56 +1,54 @@
-"use client";
+'use client'
 
-import React from "react";
-import { usePathname, useRouter } from "next/navigation";
+import React from 'react'
+import { usePathname, useRouter } from 'next/navigation'
 
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-} from "@/components/ui/select";
+import { Select, SelectContent, SelectItem, SelectTrigger } from '@/components/ui/select'
 
-import { i18n } from "@/dictionaries/i18n-config";
-import renderLinkByLocale from "@/lib/renderLinkByLocale";
-import { LocaleEnum, MappingLocaleEnum } from "@/types/locales";
+import { i18n } from '@/dictionaries/i18n-config'
+import renderLinkByLocale from '@/lib/renderLinkByLocale'
+import { LocaleEnum, MappingLocaleEnum } from '@/types/locales'
 
 interface LangToggleProps {
-  lang: string;
+  lang: string
 }
 
 function LangToggle(props: LangToggleProps) {
-  const { lang } = props;
-  const pathname = usePathname();
-  const router = useRouter();
+  const { lang } = props
+  const pathname = usePathname()
+  const router = useRouter()
 
   const onRenderLinkByLocale = (locale: LocaleEnum) => {
     return renderLinkByLocale({
       link: pathname,
       locale,
-    });
-  };
+    })
+  }
 
   const onChangeLocale = (locale: LocaleEnum) => {
-    const link = onRenderLinkByLocale(locale);
+    const link = onRenderLinkByLocale(locale)
 
-    router.push(link);
-  };
+    router.push(link)
+  }
 
   return (
     <Select onValueChange={onChangeLocale}>
-      <SelectTrigger className="w-auto min-w-[6.25rem]">
+      <SelectTrigger className='w-auto min-w-[6.25rem]'>
         {MappingLocaleEnum[lang as LocaleEnum]}
       </SelectTrigger>
 
       <SelectContent>
         {i18n.locales.map((locale) => (
-          <SelectItem key={`locale-${locale}`} value={locale}>
-            {MappingLocaleEnum[locale]} {locale === lang && "✨"}
+          <SelectItem
+            key={`locale-${locale}`}
+            value={locale}
+          >
+            {MappingLocaleEnum[locale]} {locale === lang && '✨'}
           </SelectItem>
         ))}
       </SelectContent>
     </Select>
-  );
+  )
 }
 
-export default React.memo(LangToggle);
+export default React.memo(LangToggle)
