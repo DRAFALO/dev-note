@@ -4,6 +4,8 @@ import React from "react";
 import { useTheme } from "next-themes";
 
 import sx from "./ThemeToggle.module.scss";
+import { Button } from "@/components/ui/button";
+import { MoonIcon, SunIcon } from "lucide-react";
 
 function ThemeToggle() {
   const { theme, setTheme } = useTheme();
@@ -14,19 +16,30 @@ function ThemeToggle() {
   };
 
   return (
-    <label
-      className={sx.switch}
-      htmlFor="theme-toggle"
-      aria-label="Theme Toggle"
-    >
-      <input
-        type="checkbox"
-        id="theme-toggle"
-        onChange={onToggle}
-        defaultChecked={theme === "dark"}
-      />
-      <span className={sx.slider} />
-    </label>
+    <>
+      <Button variant="outline" size="icon" onClick={() => setTheme(theme == "dark" ? "light" : "dark")} className="border-none">
+        {theme === "dark" ? <>
+          <SunIcon className="h-[1.2rem] w-[1.2rem] " /></> :
+          <MoonIcon className="absolute h-[1.2rem] w-[1.2rem] " />}
+
+
+
+      </Button>
+    </>
+    // <label
+    // className={sx.switch}
+    // htmlFor="theme-toggle"
+    // aria-label="Theme Toggle"
+    // >
+    //   <input
+    //     type="checkbox"
+    //     id="theme-toggle"
+    //     onChange={onToggle}
+    //     defaultChecked={theme === "dark"}
+    //   />
+    //   <span className={sx.slider} />
+
+    // </label>
   );
 }
 
