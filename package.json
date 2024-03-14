@@ -6,10 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prettier": "prettier --write ."
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.5.2",
+    "@radix-ui/react-avatar": "^1.0.4",
+    "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-select": "^2.0.0",
     "@radix-ui/react-slot": "^1.0.2",
     "class-variance-authority": "^0.7.0",
@@ -46,6 +49,7 @@
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "postcss": "^8",
+    "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.9",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"

@@ -38,10 +38,9 @@ function LangToggle(props: LangToggleProps) {
 
   return (
     <Select onValueChange={onChangeLocale}>
-      <SelectTrigger className="w-auto min-w-[6.25rem]">
+      <SelectTrigger className="w-auto min-w-[6.75rem] text-[0.75rem] md:text-[1rem]">
         {MappingLocaleEnum[lang as LocaleEnum]}
       </SelectTrigger>
-
       <SelectContent>
         {i18n.locales.map((locale) => (
           <SelectItem key={`locale-${locale}`} value={locale}>

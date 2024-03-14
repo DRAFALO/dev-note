@@ -35,7 +35,11 @@ async function RootLayout({
   const dictionary = await getDictionary(params.lang);
 
   return (
-    <html lang={params.lang} suppressHydrationWarning>
+    <html
+      lang={params.lang}
+      suppressHydrationWarning
+      className={clsx("scroll-smooth")}
+    >
       <body
         className={clsx(
           inter.variable,

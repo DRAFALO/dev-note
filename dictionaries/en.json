@@ -2,6 +2,15 @@
   "hello": "hello",
   "DevNote is a blog that helps you to share your knowledge.": "DevNote is a blog that helps you to share your knowledge.",
   "Sign In": "Sign In",
+  "Sign Up": "Sign Up",
+  "Sign Out": "Sign Out",
   "DevNote": "DevNote",
-  "Search blog by topics": "Search blog by topics"
+  "Search blog by topics": "Search blog by topics",
+
+  "Home": "Home",
+  "Search": "Search",
+  "Notes": "Notes",
+  "Settings": "Settings",
+  "Profile": "Profile",
+  "Menu": "Menu"
 }
