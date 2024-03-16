@@ -6,14 +6,37 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky install",
+    "commit": "git-cz",
+    "check-format": "prettier --check \"**/*.{ts,tsx,js,jsx,css}\"",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,css}\""
+  },
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx}": [
+      "eslint --fix",
+      "eslint",
+      "prettier --write"
+    ],
+    "*.json": [
+      "prettier --write"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   },
   "dependencies": {
+    "@commitlint/cli": "^19.1.0",
+    "@commitlint/config-conventional": "^19.1.0",
     "@formatjs/intl-localematcher": "^0.5.2",
     "@radix-ui/react-select": "^2.0.0",
     "@radix-ui/react-slot": "^1.0.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
     "lucide-react": "^0.294.0",
     "million": "^2.6.4",
     "negotiator": "^0.6.3",
@@ -45,6 +68,8 @@
     "eslint-plugin-prettier": "^5.0.1",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-simple-import-sort": "^10.0.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.2.2",
     "postcss": "^8",
     "prettier-plugin-tailwindcss": "^0.5.9",
     "tailwindcss": "^3.3.0",
