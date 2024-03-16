@@ -14,7 +14,7 @@ async function Home({ params: { lang } }: { params: { lang: LocaleEnum } }) {
 
   return (
     <>
-      <HeroBanner dictionary={dictionary} />
+      <HeroBanner />
       <Category dictionary={dictionary} categories={listCategories.data} />
     </>
   );
