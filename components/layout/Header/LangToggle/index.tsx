@@ -42,7 +42,7 @@ function LangToggle(props: LangToggleProps) {
         {MappingLocaleEnum[lang as LocaleEnum]}
       </SelectTrigger>
 
-      <SelectContent>
+      <SelectContent className="shadow-md" align="end">
         {i18n.locales.map((locale) => (
           <SelectItem key={`locale-${locale}`} value={locale}>
             {MappingLocaleEnum[locale]} {locale === lang && "✨"}

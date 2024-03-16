@@ -1,5 +1,5 @@
 import React from "react";
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 import Image from "next/image";
 
 import AppLink from "@/components/common/AppLink";
@@ -8,10 +8,10 @@ import LangToggle from "@/components/layout/Header/LangToggle";
 import { ROUTES } from "@/constants/routes";
 import { LocaleKeys } from "@/types/locales";
 
-const ThemeToggle = dynamic(
-  () => import("@/components/layout/Header/ThemeToggle"),
-  { ssr: false },
-);
+// const ThemeToggle = dynamic(
+//   () => import("@/components/layout/Header/ThemeToggle"),
+//   { ssr: false },
+// );
 
 interface NavBarProps {
   lang: string;
@@ -22,7 +22,7 @@ function Header(props: NavBarProps) {
   const { lang, dictionary } = props;
 
   return (
-    <header className="sticky z-header bg-white py-3">
+    <header className="sticky z-header flex min-h-[5rem] items-center bg-white">
       <div className="container grid grid-cols-12">
         <div className="col-span-6">
           <AppLink href={ROUTES.HOME.LINK} aria-label={dictionary.DevNote}>
@@ -30,8 +30,8 @@ function Header(props: NavBarProps) {
           </AppLink>
         </div>
 
-        <div className="col-span-6 flex items-center justify-end gap-4">
-          <ThemeToggle />
+        <div className="col-span-6 flex items-center justify-end gap-8">
+          {/* <ThemeToggle dictionary={dictionary} /> */}
 
           <LangToggle lang={lang} />
         </div>

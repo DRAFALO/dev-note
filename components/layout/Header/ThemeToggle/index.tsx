@@ -3,9 +3,17 @@
 import React from "react";
 import { useTheme } from "next-themes";
 
-import sx from "./ThemeToggle.module.scss";
+import AppIcon from "@/components/common/AppIcon";
 
-function ThemeToggle() {
+import { LocaleKeys } from "@/types/locales";
+
+interface Props {
+  dictionary: LocaleKeys;
+}
+
+function ThemeToggle(props: Props) {
+  const { dictionary } = props;
+
   const { theme, setTheme } = useTheme();
 
   const onToggle = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -14,18 +22,22 @@ function ThemeToggle() {
   };
 
   return (
-    <label
-      className={sx.switch}
-      htmlFor="theme-toggle"
-      aria-label="Theme Toggle"
-    >
+    <label htmlFor="theme-toggle" aria-label="Theme Toggle">
       <input
         type="checkbox"
         id="theme-toggle"
         onChange={onToggle}
         defaultChecked={theme === "dark"}
+        className="hidden"
       />
-      <span className={sx.slider} />
+
+      <AppIcon
+        src="/svg/sun.svg#id"
+        aria-label={dictionary["Turn on the light"]}
+        width={20}
+        height={20}
+        className=""
+      />
     </label>
   );
 }

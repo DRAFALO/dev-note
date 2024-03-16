@@ -87,6 +87,7 @@ const config: Config = {
       zIndex: {
         header: "100",
         modal: "9999",
+        toast: "99999",
       },
     },
   },

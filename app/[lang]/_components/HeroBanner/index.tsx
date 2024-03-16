@@ -1,35 +1,38 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import Image from "next/image";
 
 import AppLink from "@/components/common/AppLink";
 import { Button } from "@/components/ui/button";
 
 import { ROUTES } from "@/constants/routes";
+import { SLIDE_AUTOPLAY_TIME } from "@/constants/slide";
 import { LocaleKeys } from "@/types/locales";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 interface HeroBannerProps {
   dictionary: LocaleKeys;
 }
 
+const settings = {
+  infinite: true,
+  speed: SLIDE_AUTOPLAY_TIME,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  dots: false,
+};
+
 function HeroBanner(props: HeroBannerProps) {
   const { dictionary } = props;
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
-
   return (
-    <section className="container mb-10 p-8">
+    <section className="container my-10 bg-white p-8">
       <div className="slider-container">
+        {/* eslint-disable-next-line react/jsx-props-no-spreading */}
         <Slider {...settings}>
           <div>
             <div className="relative grid h-full bg-transparent lg:grid-cols-2 lg:px-6 lg:py-[1rem]">
@@ -62,17 +65,6 @@ function HeroBanner(props: HeroBannerProps) {
                     and category layouts available.
                   </p>
                 </div>
-
-                <Button asChild className="w-full border border-white lg:py-7">
-                  <AppLink
-                    href={ROUTES.SIGN_UP.LINK}
-                    aria-label={dictionary["Sign In"]}
-                  >
-                    <span className="text-heading-7 md:text-heading-6">
-                      {dictionary["Sign In"]}
-                    </span>
-                  </AppLink>
-                </Button>
               </div>
 
               <div className="relative">
