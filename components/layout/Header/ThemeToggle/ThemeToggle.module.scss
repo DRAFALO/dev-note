@@ -47,6 +47,7 @@
 
 .switch input:checked + .slider {
   background-color: black;
+  border:solid 1px #ccc;
 }
 
 .switch input:focus + .slider {
