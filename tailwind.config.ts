@@ -13,8 +13,8 @@ const config: Config = {
       padding: "16px",
     },
     fontSize: {
-      "heading-1": ["2.5rem", { lineHeight: "1.4", fontWeight: 500 }],
-      "heading-2": ["2rem", { lineHeight: "1.2", fontWeight: 500 }],
+      "heading-1": ["2.5rem", { lineHeight: "1.6", fontWeight: 500 }],
+      "heading-2": ["2rem", { fontWeight: 500 }],
       "heading-3": ["1.75rem", { fontWeight: 500 }],
       "heading-4": ["1.5rem", { fontWeight: 500 }],
       "heading-5": ["1.25rem", { fontWeight: 500 }],
