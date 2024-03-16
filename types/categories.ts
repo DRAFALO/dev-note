@@ -1,10 +1,10 @@
 export interface CategoryEntity {
-  _id: string
-  name: string
+  _id: string;
+  name: string;
 }
 
 export interface APICategoryResponse {
-  data: CategoryEntity[]
-  page: number
-  total: number
+  data: CategoryEntity[];
+  page: number;
+  total: number;
 }

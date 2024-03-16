@@ -1,15 +1,15 @@
-import React from 'react'
+import React from "react";
 
-import { LocaleKeys } from '@/types/locales'
+import { LocaleKeys } from "@/types/locales";
 
 interface FooterProps {
-  dictionary: LocaleKeys
+  dictionary: LocaleKeys;
 }
 
 function Footer(props: FooterProps) {
-  const { dictionary } = props
+  const { dictionary } = props;
 
-  return <footer className='container'>{dictionary.DevNote}</footer>
+  return <footer className="container">{dictionary.DevNote}</footer>;
 }
 
-export default React.memo(Footer)
+export default React.memo(Footer);

@@ -1,43 +1,39 @@
 /* eslint-disable react/jsx-props-no-spreading */
 
-'use client'
+"use client";
 
-import React from 'react'
-import Link, { LinkProps } from 'next/link'
-import { usePathname } from 'next/navigation'
+import React from "react";
+import Link, { LinkProps } from "next/link";
+import { usePathname } from "next/navigation";
 
 interface AppLinkProps {
-  href: LinkProps['href']
-  ['aria-label']: string
+  href: LinkProps["href"];
+  ["aria-label"]: string;
 }
 
 function AppLink(props: React.PropsWithChildren<AppLinkProps>) {
-  const { href, children, ...others } = props
+  const { href, children, ...others } = props;
 
-  const uuid = React.useId()
-  const pathname = usePathname()
+  const uuid = React.useId();
+  const pathname = usePathname();
 
-  const locale = pathname.split('/')[1]
+  const locale = pathname.split("/")[1];
 
   const finalLink = () => {
-    if (!href) return `/${locale}`
+    if (!href) return `/${locale}`;
 
-    const segments = (href as string).split('/')
+    const segments = (href as string).split("/");
 
-    segments[1] = locale
+    segments[1] = locale;
 
-    return `/${locale}/${href}`
-  }
+    return `/${locale}/${href}`;
+  };
 
   return (
-    <Link
-      {...others}
-      href={finalLink()}
-      key={uuid}
-    >
+    <Link {...others} href={finalLink()} key={uuid}>
       {children}
     </Link>
-  )
+  );
 }
 
-export default React.memo(AppLink)
+export default React.memo(AppLink);
