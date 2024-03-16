@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from "react";
 
-interface SVGTagProps {
+interface AppIconProps {
   src: string;
   className?: string;
   width?: number;
@@ -9,7 +9,7 @@ interface SVGTagProps {
   ["aria-label"]: string;
 }
 
-function SVGTag(props: SVGTagProps) {
+function AppIcon(props: AppIconProps) {
   const { src, className, ...other } = props;
 
   return (
@@ -19,10 +19,10 @@ function SVGTag(props: SVGTagProps) {
   );
 }
 
-SVGTag.defaultProps = {
+AppIcon.defaultProps = {
   width: 20,
   height: 20,
   className: "",
 };
 
-export default React.memo(SVGTag);
+export default React.memo(AppIcon);

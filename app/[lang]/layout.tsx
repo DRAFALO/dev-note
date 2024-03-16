@@ -42,7 +42,7 @@ async function RootLayout({
           "flex min-h-screen flex-col transition duration-300",
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="light">
           <Header lang={params.lang} dictionary={dictionary} />
 
           <main className="flex-1">{children}</main>
