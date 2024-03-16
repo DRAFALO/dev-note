@@ -9,10 +9,11 @@ import { usePathname } from "next/navigation";
 interface AppLinkProps {
   href: LinkProps["href"];
   ["aria-label"]: string;
+  className?: string;
 }
 
 function AppLink(props: React.PropsWithChildren<AppLinkProps>) {
-  const { href, children, ...others } = props;
+  const { href, children, className, ...others } = props;
 
   const uuid = React.useId();
   const pathname = usePathname();
@@ -30,10 +31,14 @@ function AppLink(props: React.PropsWithChildren<AppLinkProps>) {
   };
 
   return (
-    <Link {...others} href={finalLink()} key={uuid}>
+    <Link {...others} href={finalLink()} key={uuid} className={className}>
       {children}
     </Link>
   );
 }
+
+AppLink.defaultProps = {
+  className: "",
+};
 
 export default React.memo(AppLink);
