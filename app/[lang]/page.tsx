@@ -1,5 +1,7 @@
 import React from "react";
 
+import ArticlePopular from "@/components/ArticlePopular";
+
 import HeroBanner from "@/app/[lang]/_components/HeroBanner";
 import { getDictionary } from "@/dictionaries/get-dictionary";
 import { fetchCategories } from "@/services/category";
@@ -16,6 +18,7 @@ async function Home({ params: { lang } }: { params: { lang: LocaleEnum } }) {
     <>
       <HeroBanner />
       <Category dictionary={dictionary} categories={listCategories.data} />
+      <ArticlePopular />
     </>
   );
 }
