@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 
@@ -21,9 +22,15 @@ function Category(props: CategoryProps) {
 
       <div className=" flex flex-wrap gap-3">
         {categories.map((category) => (
-          <Button key={category.name} variant="secondary">
-            {category.name}
-          </Button>
+          <Link
+            key={category.name}
+            href={{
+              pathname: "/blog",
+              query: { tag: category.name },
+            }}
+          >
+            <Button variant="hashtag">#{category.name}</Button>
+          </Link>
         ))}
       </div>
     </section>
