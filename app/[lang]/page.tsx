@@ -1,13 +1,12 @@
 import React from "react";
 
-import AboutMyTeam from "@/components/AboutMyTeam";
+import AboutMyTeam from "@/components/Home/AboutMyTeam";
+import Category from "@/components/Home/Category";
+import HeroBanner from "@/components/Home/HeroBanner";
 
-import HeroBanner from "@/app/[lang]/_components/HeroBanner";
 import { getDictionary } from "@/dictionaries/get-dictionary";
 import { fetchCategories } from "@/services/category";
 import { LocaleEnum } from "@/types/locales";
-
-import Category from "./_components/Category";
 
 async function Home({ params: { lang } }: { params: { lang: LocaleEnum } }) {
   const dictionary = await getDictionary(lang);
@@ -18,7 +17,7 @@ async function Home({ params: { lang } }: { params: { lang: LocaleEnum } }) {
     <>
       <HeroBanner />
       <Category dictionary={dictionary} categories={listCategories.data} />
-      <AboutMyTeam />
+      <AboutMyTeam dictionary={dictionary} />
     </>
   );
 }

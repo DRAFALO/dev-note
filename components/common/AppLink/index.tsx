@@ -13,7 +13,7 @@ interface AppLinkProps {
 }
 
 function AppLink(props: React.PropsWithChildren<AppLinkProps>) {
-  const { href, children, className, ...others } = props;
+  const { href, children, className = "", ...others } = props;
 
   const uuid = React.useId();
   const pathname = usePathname();
@@ -36,9 +36,5 @@ function AppLink(props: React.PropsWithChildren<AppLinkProps>) {
     </Link>
   );
 }
-
-AppLink.defaultProps = {
-  className: "",
-};
 
 export default React.memo(AppLink);

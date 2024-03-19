@@ -1,35 +1,46 @@
 import React from "react";
-import { CiGlobe } from "react-icons/ci";
-// --Icon
-import { FiGithub } from "react-icons/fi";
 import Image from "next/image";
 
+import AppIcon from "@/components/common/AppIcon";
 import AppLink from "@/components/common/AppLink";
 
 function Member(props: any) {
   const { member } = props;
+
   return (
-    <div className="mt-12 flex rounded-2xl  border-2 border-white">
+    <div className="flex rounded-2xl  border-2 border-white">
       <Image
-        style={{ borderRadius: "16px" }}
+        className="rounded-2xl"
         src={member.avatar}
         alt="Avatar"
         width={160}
         height={160}
       />
+
       <div className="flex flex-col justify-between pl-6 pt-3">
-        <div>
-          <h2 className="text-heading-5">{member.name}</h2>
-          <h2>
-            aka <span className="font-medium">{member.aka}</span>
-          </h2>
-        </div>
+        <h3 className="text-heading-5">{member.name}</h3>
+
+        <h4>
+          aka <span className="font-medium">{member.aka}</span>
+        </h4>
+
         <div className="mb-2 flex space-x-2">
           <AppLink href={member.githubLink} aria-label={member.name}>
-            <FiGithub cursor="pointer" size={20} />
+            <AppIcon
+              src="/svg/github.svg#id"
+              aria-label="Github"
+              width={25}
+              height={25}
+            />
           </AppLink>
+
           <AppLink href={member.socialLink} aria-label={member.name}>
-            <CiGlobe cursor="pointer" size={20} />
+            <AppIcon
+              src="/svg/globe.svg#id"
+              aria-label="Linkedin"
+              width={25}
+              height={25}
+            />
           </AppLink>
         </div>
       </div>

@@ -2,6 +2,8 @@ import React from "react";
 
 import AppLink from "@/components/common/AppLink";
 
+import { ROUTES } from "@/constants/routes";
+import { randomId } from "@/lib/randomId";
 import { LocaleKeys } from "@/types/locales";
 
 interface FooterProps {
@@ -12,18 +14,22 @@ const footerItems = [
   {
     title: "FAQ",
     link: "Test",
+    id: randomId(),
   },
   {
     title: "Customer support",
     link: "Test",
+    id: randomId(),
   },
   {
     title: "How it works",
     link: "Test",
+    id: randomId(),
   },
   {
     title: "Contact us",
     link: "Test",
+    id: randomId(),
   },
 ];
 
@@ -33,7 +39,14 @@ function Footer(props: FooterProps) {
   return (
     <footer className="container mb-14 mt-20 flex justify-between">
       <div>
-        <div className="text-heading-4 font-bold">{dictionary.DevNote}</div>
+        <AppLink
+          href={ROUTES.HOME.LINK}
+          className="text-heading-4 font-bold"
+          aria-label="DevNote"
+        >
+          {dictionary.DevNote}
+        </AppLink>
+
         <h2 className="mt-4">
           {
             dictionary[
@@ -41,18 +54,23 @@ function Footer(props: FooterProps) {
             ]
           }
         </h2>
-        <h2 className="pt-6 font-semibold">{dictionary.DevNote} ©2023</h2>
+
+        <h3 className="pt-6 font-semibold">{dictionary.DevNote} ©2023</h3>
       </div>
+
       <div className="text-right">
-        <div className="font-bold">Home</div>
-        <ul className="mt-1">
+        <AppLink
+          href={ROUTES.HOME.LINK}
+          aria-label={dictionary.Home}
+          className="font-bold"
+        >
+          {dictionary.Home}
+        </AppLink>
+
+        <ul className="mt-2">
           {footerItems.map((item) => (
-            <li key={item.title}>
-              <AppLink
-                aria-label={item.title}
-                href={item.link}
-                className="mt-1"
-              >
+            <li key={item.id} className="mt-1">
+              <AppLink aria-label={item.title} href={item.link}>
                 {item.title}
               </AppLink>
             </li>
