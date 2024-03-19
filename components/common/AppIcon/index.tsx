@@ -1,6 +1,8 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from "react";
 
+import { cn } from "@/lib/utils";
+
 interface AppIconProps {
   src: string;
   className?: string;
@@ -10,19 +12,18 @@ interface AppIconProps {
 }
 
 function AppIcon(props: AppIconProps) {
-  const { src, className, ...other } = props;
+  const { src, className = "", width = 20, height = width, ...other } = props;
 
   return (
-    <svg width={20} height={20} className={className} {...other}>
-      <use href={src} width={20} height={20} {...other} />
+    <svg
+      width={width}
+      height={height}
+      className={cn("duration-300 ", className)}
+      {...other}
+    >
+      <use href={src} width={width} height={height} {...other} />
     </svg>
   );
 }
-
-AppIcon.defaultProps = {
-  width: 20,
-  height: 20,
-  className: "",
-};
 
 export default React.memo(AppIcon);

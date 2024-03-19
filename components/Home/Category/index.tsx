@@ -15,9 +15,10 @@ function Category(props: CategoryProps) {
 
   return (
     <section className="container my-4">
-      <h3 className="mb-2 text-heading-4">
+      <h2 className="mb-2 text-heading-2">
         {dictionary["Search blog by topics"]}
-      </h3>
+      </h2>
+
       <div className=" flex flex-wrap gap-3">
         {categories.map((category) => (
           <Button key={category.name} variant="secondary">
