@@ -2,9 +2,9 @@
 
 import React from "react";
 import Image from "next/image";
-import { useBoolean } from "usehooks-ts";
 
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 
 import { randomId } from "@/lib/randomId";
 import { LocaleKeys } from "@/types/locales";
@@ -40,12 +40,6 @@ interface Props {
 function AboutMyTeam(props: Props) {
   const { dictionary } = props;
 
-  const {
-    value: isOpenModalContact,
-    setTrue: openModalContact,
-    setFalse: closeModalContact,
-  } = useBoolean();
-
   return (
     <section className="container my-10">
       <h2 className="mb-5 text-center text-heading-2 font-bold">
@@ -72,19 +66,20 @@ function AboutMyTeam(props: Props) {
             <span className="font-medium">We don&apos;t know yet</span>
 
             <div className="mb-2">
-              <Button onClick={openModalContact} className="flex items-center ">
-                <AppIcon
-                  src="/svg/message-square.svg#id"
-                  aria-label={dictionary["Contact now"]}
-                />
+              <Dialog>
+                <Button className="flex items-center " asChild>
+                  <DialogTrigger>
+                    <AppIcon
+                      src="/svg/message-square.svg#id"
+                      aria-label={dictionary["Contact now"]}
+                    />
 
-                <span className="pl-3">Contact now</span>
-              </Button>
+                    <span className="pl-3">{dictionary["Contact now"]}</span>
+                  </DialogTrigger>
+                </Button>
 
-              <ModalContact
-                open={isOpenModalContact}
-                onClose={closeModalContact}
-              />
+                <ModalContact />
+              </Dialog>
             </div>
           </div>
         </div>
