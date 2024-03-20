@@ -3,15 +3,16 @@ import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 
+import { ROUTES } from "@/constants/routes";
 import { CategoryEntity } from "@/types/categories";
 import { LocaleKeys } from "@/types/locales";
 
-interface CategoryProps {
+interface Props {
   dictionary: LocaleKeys;
   categories: CategoryEntity[];
 }
 
-function Category(props: CategoryProps) {
+function Category(props: Props) {
   const { dictionary, categories } = props;
 
   return (
@@ -22,15 +23,16 @@ function Category(props: CategoryProps) {
 
       <div className=" flex flex-wrap gap-3">
         {categories.map((category) => (
-          <Link
-            key={category.name}
-            href={{
-              pathname: "/blog",
-              query: { tag: category.name },
-            }}
-          >
-            <Button variant="hashtag">#{category.name}</Button>
-          </Link>
+          <Button key={category.name} variant="hashtag" asChild>
+            <Link
+              href={{
+                pathname: ROUTES.BLOG.LINK,
+                query: { category: category.name },
+              }}
+            >
+              #{category.name}
+            </Link>
+          </Button>
         ))}
       </div>
     </section>

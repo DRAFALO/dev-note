@@ -7,4 +7,8 @@ export const ROUTES = {
     LINK: "/sign-up",
     TITLE: "Sign Up",
   },
+  BLOG: {
+    LINK: "/blog",
+    TITLE: "Blog",
+  },
 };
