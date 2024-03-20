@@ -1,6 +1,6 @@
 import React from "react";
 
-import CardSingleBlog from "@/components/CardSingleBlog";
+import CardSingleBlog from "@/components/CardBlogItem";
 import AboutMyTeam from "@/components/Home/AboutMyTeam";
 import Category from "@/components/Home/Category";
 import HeroBanner from "@/components/Home/HeroBanner";
@@ -60,7 +60,18 @@ async function Home({ params: { lang } }: { params: { lang: LocaleEnum } }) {
       <HeroBanner />
       <Category dictionary={dictionary} categories={listCategories.data} />
       {data.map((blog) => {
-        return <CardSingleBlog props={blog} key={blog.id} />;
+        return (
+          <CardSingleBlog
+            key={blog.id}
+            author={blog.author}
+            description={blog.description}
+            href={blog.href}
+            image={blog.image}
+            postingTime={blog.postingTime}
+            readingTime={blog.readingTime}
+            title={blog.title}
+          />
+        );
       })}
       <AboutMyTeam dictionary={dictionary} />
     </>
