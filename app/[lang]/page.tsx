@@ -1,6 +1,7 @@
 import React from "react";
 
 import CardSingleBlog from "@/components/CardBlogItem";
+import AppSectionTitle from "@/components/common/AppSectionTitle";
 import AboutMyTeam from "@/components/Home/AboutMyTeam";
 import Category from "@/components/Home/Category";
 import HeroBanner from "@/components/Home/HeroBanner";
@@ -74,6 +75,12 @@ async function Home({ params: { lang } }: { params: { lang: LocaleEnum } }) {
         );
       })}
       <AboutMyTeam dictionary={dictionary} />
+
+      <AppSectionTitle
+        dictionary={dictionary}
+        title="Hello Fen"
+        linkShowMore="/user"
+      />
     </>
   );
 }
