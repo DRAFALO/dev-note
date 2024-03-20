@@ -6,6 +6,8 @@ import React from "react";
 import Link, { LinkProps } from "next/link";
 import { usePathname } from "next/navigation";
 
+import { cn } from "@/lib/utils";
+
 interface AppLinkProps {
   href: LinkProps["href"];
   ["aria-label"]: string;
@@ -31,7 +33,12 @@ function AppLink(props: React.PropsWithChildren<AppLinkProps>) {
   };
 
   return (
-    <Link {...others} href={finalLink()} key={uuid} className={className}>
+    <Link
+      {...others}
+      href={finalLink()}
+      key={uuid}
+      className={cn("duration-300", className)}
+    >
       {children}
     </Link>
   );
