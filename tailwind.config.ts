@@ -23,6 +23,7 @@ const config: Config = {
       "heading-xs": ["0.4rem", { fontWeight: 200 }],
       "description-1": [".8rem", { fontWeight: 200 }],
       "description-2": ["1.2rem", { fontWeight: 200 }],
+      "big-size": ["4rem", { fontWeight: 600 }],
     },
     extend: {
       colors: {

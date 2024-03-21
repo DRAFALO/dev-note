@@ -2,7 +2,7 @@ const million = require("million/compiler");
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["picsum.photos", "i.pinimg.com"],
+    domains: ["picsum.photos", "i.pinimg.com", "images7.alphacoders.com"],
   },
 };
 

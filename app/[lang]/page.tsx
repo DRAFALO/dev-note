@@ -1,5 +1,7 @@
 import React from "react";
 
+
+
 import AboutMyTeam from "@/components/Home/AboutMyTeam";
 import Category from "@/components/Home/Category";
 import HeroBanner from "@/components/Home/HeroBanner";
@@ -18,6 +20,7 @@ async function Home({ params: { lang } }: { params: { lang: LocaleEnum } }) {
     <>
       <HeroBanner />
       <Category dictionary={dictionary} categories={listCategories.data} />
+      <ArticlePopular />
       <News dictionary={dictionary} />
       <AboutMyTeam dictionary={dictionary} />
     </>
