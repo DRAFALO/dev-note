@@ -1,4 +1,5 @@
 import React from "react";
+import isEqual from "react-fast-compare";
 import Image from "next/image";
 
 import AppLink from "@/components/common/AppLink";
@@ -18,7 +19,7 @@ function CardBlogItem(props: Props) {
     props;
 
   return (
-    <div className="flex flex-col lg:flex-row lg:gap-2">
+    <div className="mb-10 flex flex-col lg:flex-row lg:gap-2">
       <div className="flex-1">
         <h3 className="mb-1 line-clamp-2 text-heading-4 font-bold">
           <AppLink
@@ -60,4 +61,4 @@ function CardBlogItem(props: Props) {
   );
 }
 
-export default React.memo(CardBlogItem);
+export default React.memo(CardBlogItem, isEqual);
