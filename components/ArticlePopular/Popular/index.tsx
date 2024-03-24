@@ -1,9 +1,14 @@
 import React from "react";
 
 import AppLink from "@/components/common/AppLink";
+import AppSectionTitle from "@/components/common/AppSectionTitle";
 
 import { randomId } from "@/lib/randomId";
+import { LocaleKeys } from "@/types/locales";
 
+interface Props {
+  dictionary: LocaleKeys;
+}
 const data = [
   {
     title:
@@ -37,12 +42,17 @@ const data = [
   },
 ];
 
-function Popular() {
+function Popular(props: Props) {
+  const { dictionary } = props;
   return (
     <div>
-      <h2 className="mb-4 border-b-[1px] border-blue-400 text-heading-2">
-        Popular
-      </h2>
+      <div className="mb-8">
+        <AppSectionTitle
+          dictionary={dictionary}
+          title="Popular"
+          linkShowMore="/allNews"
+        />
+      </div>
 
       <div className="flex flex-col gap-3">
         {data.map((item, index) => (
