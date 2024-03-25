@@ -4,6 +4,7 @@ import CardSingleBlog from "@/components/CardBlogItem";
 import AppSectionTitle from "@/components/common/AppSectionTitle";
 
 import { randomId } from "@/lib/randomId";
+import { cn } from "@/lib/utils";
 import { LocaleKeys } from "@/types/locales";
 
 interface Props {
@@ -56,29 +57,27 @@ function News(props: Props) {
   const { dictionary } = props;
 
   return (
-    <section className="container">
-      <div className="mb-8">
-        <AppSectionTitle
-          dictionary={dictionary}
-          title="All Stories"
-          linkShowMore="/allNews"
-        />
-      </div>
+    <section className="container my-10">
+      <AppSectionTitle
+        dictionary={dictionary}
+        title="All Stories"
+        linkShowMore="/allNews"
+        className="mb-8"
+      />
 
-      {data.map((blog) => {
-        return (
-          <CardSingleBlog
-            key={blog.id}
-            author={blog.author}
-            description={blog.description}
-            href={blog.href}
-            image={blog.image}
-            postingTime={blog.postingTime}
-            readingTime={blog.readingTime}
-            title={blog.title}
-          />
-        );
-      })}
+      {data.map((blog, index) => (
+        <CardSingleBlog
+          key={blog.id}
+          author={blog.author}
+          description={blog.description}
+          href={blog.href}
+          image={blog.image}
+          postingTime={blog.postingTime}
+          readingTime={blog.readingTime}
+          title={blog.title}
+          className={cn(!!index && "mt-4")}
+        />
+      ))}
     </section>
   );
 }

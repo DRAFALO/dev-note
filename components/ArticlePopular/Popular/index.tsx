@@ -45,34 +45,34 @@ const data = [
 function Popular(props: Props) {
   const { dictionary } = props;
   return (
-    <div>
-      <div className="mb-8">
-        <AppSectionTitle
-          dictionary={dictionary}
-          title="Popular"
-          linkShowMore="/allNews"
-        />
-      </div>
+    <>
+      <AppSectionTitle
+        dictionary={dictionary}
+        title="Popular"
+        linkShowMore="/allNews"
+        className="mb-8"
+      />
 
       <div className="flex flex-col gap-3">
         {data.map((item, index) => (
-          <section key={item.id} className="flex justify-center gap-4">
-            <p className="flex text-center text-big-size font-bold">
+          <article key={item.id} className="flex justify-center gap-4">
+            <span className="flex text-center text-big-size font-bold">
               {index < 9 ? `0${index + 1}` : index + 1}
-            </p>
+            </span>
 
-            <div className="mt-2 flex flex-col  justify-center">
-              <h3 className="line-clamp-2 text-heading-5 font-bold leading-7">
+            <div className="mt-2 flex flex-1 flex-col justify-center">
+              <h3 className="line-clamp-1 text-heading-5 font-bold leading-7">
                 <AppLink href={item.href} aria-label={item.title}>
-                  Did Supernovae Kill Off Large Ocean
+                  Did Supernovae
                 </AppLink>
               </h3>
-              <span>Jake Bittle in SCIENCE</span>
+
+              <span className="line-clamp-2">Jake Bittle in SCIENCE</span>
             </div>
-          </section>
+          </article>
         ))}
       </div>
-    </div>
+    </>
   );
 }
 

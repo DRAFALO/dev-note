@@ -14,7 +14,7 @@ interface Props {
 function ArticlePopular(props: Props) {
   const { dictionary } = props;
   return (
-    <section className="container grid-cols-3 gap-10 lg:grid ">
+    <section className="container my-10 grid-cols-3 gap-10 lg:grid">
       <div className="col-span-2">
         <EditorChoices dictionary={dictionary} />
       </div>
