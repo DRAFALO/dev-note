@@ -23,6 +23,7 @@ const config: Config = {
       "heading-xs": ["0.4rem", { fontWeight: 200 }],
       "description-1": [".8rem", { fontWeight: 200 }],
       "description-2": ["1.2rem", { fontWeight: 200 }],
+      "description-3": ["1rem", { fontWeight: 400 }],
       "big-size": ["4rem", { fontWeight: 600 }],
     },
     extend: {
@@ -66,6 +67,9 @@ const config: Config = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      borderWidth: {
+        lg: "30px",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
@@ -94,6 +98,6 @@ const config: Config = {
   },
   // eslint-disable-next-line global-require
   plugins: [require("tailwindcss-animate")],
-  safelist: ["shadow-sm"],
+  safelist: ["shadow-sm", "mt-4"],
 };
 export default config;
