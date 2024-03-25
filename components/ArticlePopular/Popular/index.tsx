@@ -1,9 +1,14 @@
 import React from "react";
 
 import AppLink from "@/components/common/AppLink";
+import AppSectionTitle from "@/components/common/AppSectionTitle";
 
 import { randomId } from "@/lib/randomId";
+import { LocaleKeys } from "@/types/locales";
 
+interface Props {
+  dictionary: LocaleKeys;
+}
 const data = [
   {
     title:
@@ -37,32 +42,37 @@ const data = [
   },
 ];
 
-function Popular() {
+function Popular(props: Props) {
+  const { dictionary } = props;
   return (
-    <div>
-      <h2 className="mb-4 border-b-[1px] border-blue-400 text-heading-2">
-        Popular
-      </h2>
+    <>
+      <AppSectionTitle
+        dictionary={dictionary}
+        title="Popular"
+        linkShowMore="/allNews"
+        className="mb-8"
+      />
 
       <div className="flex flex-col gap-3">
         {data.map((item, index) => (
-          <section key={item.id} className="flex justify-center gap-4">
-            <p className="flex text-center text-big-size font-bold">
+          <article key={item.id} className="flex justify-center gap-4">
+            <span className="flex text-center text-big-size font-bold">
               {index < 9 ? `0${index + 1}` : index + 1}
-            </p>
+            </span>
 
-            <div className="mt-2 flex flex-col  justify-center">
-              <h3 className="line-clamp-2 text-heading-5 font-bold leading-7">
+            <div className="mt-2 flex flex-1 flex-col justify-center">
+              <h3 className="line-clamp-1 text-heading-5 font-bold leading-7">
                 <AppLink href={item.href} aria-label={item.title}>
-                  Did Supernovae Kill Off Large Ocean
+                  Did Supernovae
                 </AppLink>
               </h3>
-              <span>Jake Bittle in SCIENCE</span>
+
+              <span className="line-clamp-2">Jake Bittle in SCIENCE</span>
             </div>
-          </section>
+          </article>
         ))}
       </div>
-    </div>
+    </>
   );
 }
 

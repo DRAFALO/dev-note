@@ -94,6 +94,6 @@ const config: Config = {
   },
   // eslint-disable-next-line global-require
   plugins: [require("tailwindcss-animate")],
-  safelist: ["shadow-sm"],
+  safelist: ["shadow-sm", "mt-4"],
 };
 export default config;

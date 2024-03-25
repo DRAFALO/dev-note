@@ -1,5 +1,6 @@
 import React from "react";
 
+import { cn } from "@/lib/utils";
 import { LocaleKeys } from "@/types/locales";
 
 import AppIcon from "../AppIcon";
@@ -11,13 +12,14 @@ interface Props {
   title: string;
   linkShowMore?: string;
   dictionary: LocaleKeys;
+  className?: string;
 }
 
 function AppSectionTitle(props: Props) {
-  const { title, linkShowMore, dictionary } = props;
+  const { title, linkShowMore, dictionary, className = "" } = props;
 
   return (
-    <div className={sx.AppSectionTitle}>
+    <div className={cn(sx.AppSectionTitle, className)}>
       <h2 className="relative text-heading-2">{title}</h2>
 
       {linkShowMore && (
