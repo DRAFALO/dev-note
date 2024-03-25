@@ -16,7 +16,7 @@ function Category(props: Props) {
   const { dictionary, categories } = props;
 
   return (
-    <section className="container my-4">
+    <section className="container my-10">
       <h2 className="mb-2 text-heading-2">
         {dictionary["Search blog by topics"]}
       </h2>

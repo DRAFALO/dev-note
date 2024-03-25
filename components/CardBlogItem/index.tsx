@@ -4,6 +4,8 @@ import Image from "next/image";
 
 import AppLink from "@/components/common/AppLink";
 
+import { cn } from "@/lib/utils";
+
 interface Props {
   title: string;
   author: string;
@@ -12,14 +14,23 @@ interface Props {
   description: string;
   image: string;
   href: string;
+  className?: string;
 }
 
 function CardBlogItem(props: Props) {
-  const { author, description, href, image, postingTime, readingTime, title } =
-    props;
+  const {
+    author,
+    description,
+    href,
+    image,
+    postingTime,
+    readingTime,
+    title,
+    className = "",
+  } = props;
 
   return (
-    <div className="mb-10 flex flex-col lg:flex-row lg:gap-2">
+    <article className={cn("flex flex-col lg:flex-row lg:gap-2", className)}>
       <div className="flex-1">
         <h3 className="mb-1 line-clamp-2 text-heading-4 font-bold">
           <AppLink
@@ -57,7 +68,7 @@ function CardBlogItem(props: Props) {
           height={250}
         />
       </AppLink>
-    </div>
+    </article>
   );
 }
 
