@@ -3,7 +3,7 @@ import React from "react";
 
 import { cn } from "@/lib/utils";
 
-interface AppIconProps {
+interface AppSVGIconProps {
   src: string;
   className?: string;
   width?: number;
@@ -11,7 +11,7 @@ interface AppIconProps {
   ["aria-label"]: string;
 }
 
-function AppIcon(props: AppIconProps) {
+function AppSVGIcon(props: AppSVGIconProps) {
   const { src, className = "", width = 20, height = width, ...other } = props;
 
   return (
@@ -26,4 +26,4 @@ function AppIcon(props: AppIconProps) {
   );
 }
 
-export default React.memo(AppIcon);
+export default React.memo(AppSVGIcon);

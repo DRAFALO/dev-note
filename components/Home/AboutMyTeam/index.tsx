@@ -9,7 +9,7 @@ import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import { randomId } from "@/lib/randomId";
 import { LocaleKeys } from "@/types/locales";
 
-import AppIcon from "../../common/AppIcon";
+import AppSVGIcon from "../../common/AppSVGIcon";
 
 import Member from "./Member";
 import ModalContact from "./ModalContact";
@@ -69,7 +69,7 @@ function AboutMyTeam(props: Props) {
               <Dialog>
                 <Button className="flex items-center " asChild>
                   <DialogTrigger>
-                    <AppIcon
+                    <AppSVGIcon
                       src="/svg/message-square.svg#id"
                       aria-label={dictionary["Contact now"]}
                     />

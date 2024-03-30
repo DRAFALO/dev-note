@@ -3,8 +3,8 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import { LocaleKeys } from "@/types/locales";
 
-import AppIcon from "../AppIcon";
 import AppLink from "../AppLink";
+import AppSVGIcon from "../AppSVGIcon";
 
 import sx from "./AppSectionTitle.module.scss";
 
@@ -30,7 +30,7 @@ function AppSectionTitle(props: Props) {
         >
           {dictionary["See more"]}
 
-          <AppIcon
+          <AppSVGIcon
             src="/svg/chevron-right.svg#id"
             aria-label={dictionary["See more"]}
           />

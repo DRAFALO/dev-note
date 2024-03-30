@@ -3,7 +3,7 @@
 import React from "react";
 import { useTheme } from "next-themes";
 
-import AppIcon from "@/components/common/AppIcon";
+import AppSVGIcon from "@/components/common/AppSVGIcon";
 
 import { LocaleKeys } from "@/types/locales";
 
@@ -31,7 +31,7 @@ function ThemeToggle(props: Props) {
         className="hidden"
       />
 
-      <AppIcon
+      <AppSVGIcon
         src="/svg/sun.svg#id"
         aria-label={dictionary["Turn on the light"]}
         width={20}

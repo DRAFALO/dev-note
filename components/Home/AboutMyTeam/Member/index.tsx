@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
 
-import AppIcon from "@/components/common/AppIcon";
 import AppLink from "@/components/common/AppLink";
+import AppSVGIcon from "@/components/common/AppSVGIcon";
 
 function Member(props: any) {
   const { member } = props;
@@ -26,7 +26,7 @@ function Member(props: any) {
 
         <div className="mb-2 flex space-x-2">
           <AppLink href={member.githubLink} aria-label={member.name}>
-            <AppIcon
+            <AppSVGIcon
               src="/svg/github.svg#id"
               aria-label="Github"
               width={25}
@@ -35,7 +35,7 @@ function Member(props: any) {
           </AppLink>
 
           <AppLink href={member.socialLink} aria-label={member.name}>
-            <AppIcon
+            <AppSVGIcon
               src="/svg/globe.svg#id"
               aria-label="Linkedin"
               width={25}
