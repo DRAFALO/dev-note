@@ -22,6 +22,13 @@ async function Home({ params: { lang } }: { params: { lang: LocaleEnum } }) {
       <ArticlePopular dictionary={dictionary} />
       <News dictionary={dictionary} />
       <AboutMyTeam dictionary={dictionary} />
+
+      <div
+        dangerouslySetInnerHTML={{
+          __html:
+            '\n<pre class="wp-block-code"><code>const a = 15</code></pre>\n\n\n\n<p>This is me</p>\n\n\n\n<p></p>\n\n\n\n<h2 class="wp-block-heading">12312kqspdjiopqr9012r9012</h2>\n\n\n\n<blockquote class="wp-block-quote">\n<p>plsdfodsfoenwfo</p>\n<cite>1231231231231</cite></blockquote>\n',
+        }}
+      />
     </>
   );
 }
