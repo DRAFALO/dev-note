@@ -38,6 +38,7 @@
     "clsx": "^2.0.0",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
+    "html-react-parser": "^5.1.10",
     "lucide-react": "^0.294.0",
     "million": "^2.6.4",
     "negotiator": "^0.6.3",
