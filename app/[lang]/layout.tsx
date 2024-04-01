@@ -36,7 +36,12 @@ async function RootLayout({
 
   return (
     <html lang={params.lang} suppressHydrationWarning>
-      <body className={clsx(inter.variable, "transition duration-300")}>
+      <body
+        className={clsx(
+          inter.variable,
+          "min-h-[100dvh] transition duration-300",
+        )}
+      >
         <ThemeProvider attribute="class" defaultTheme="light">
           <div className="flex min-h-screen flex-col">
             <Header lang={params.lang} dictionary={dictionary} />

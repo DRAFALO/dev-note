@@ -1,7 +1,7 @@
 import React from "react";
 
-import ActionButtons from "@/components/blogs/ActionButtons";
-import OtherBlogs from "@/components/blogs/OtherBlogs";
+import ActionButtons from "@/components/blogs/action-buttons";
+import RelatedBlogs from "@/components/blogs/related-blogs";
 import Card from "@/components/common/Card";
 
 interface Props {
@@ -18,7 +18,7 @@ async function BlogDetailLayout({ children }: Readonly<Props>) {
 
         <aside className="hidden min-h-[500px] basis-72 flex-col gap-4 lg:flex">
           <Card title="OtherBlogs">
-            <OtherBlogs />
+            <RelatedBlogs />
           </Card>
         </aside>
       </div>

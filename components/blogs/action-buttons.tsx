@@ -5,7 +5,7 @@ import { useMediaQuery } from "usehooks-ts";
 
 import { BREAK_POINTS } from "@/constants/media-query";
 
-import ReactionButton from "./ReactionButton";
+import ReactionButton from "./reaction-button";
 
 function ActionButtonsMobile() {
   return (
