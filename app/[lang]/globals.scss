@@ -78,11 +78,30 @@
 :root {
   font-size: 12px;
 
-  @media (min-width: theme('screens.md')) {
+  @media (min-width: theme("screens.md")) {
     font-size: 14px;
   }
 
-  @media (min-width: theme('screens.lg')) {
+  @media (min-width: theme("screens.lg")) {
     font-size: 16px;
   }
+}
+
+/* SCROLL BAR */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #eaedf1;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #fd8af9;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #272a2c;
 }

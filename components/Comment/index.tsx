@@ -1,4 +1,5 @@
 import React from "react";
+import isEqual from "react-fast-compare";
 
 import { randomId } from "@/lib/randomId";
 import { LocaleKeys } from "@/types/locales";
@@ -46,8 +47,9 @@ const data = [
   },
 ];
 
-export default function Comment(props: Props) {
+function Comments(props: Props) {
   const { dictionary } = props;
+
   return (
     <div className="container">
       <HeaderComment
@@ -57,22 +59,20 @@ export default function Comment(props: Props) {
       />
 
       <EditorForm dictionary={dictionary} className="mb-6" />
-      {data.map((comment) => {
-        return (
-          <SingleComment
-            className="mt-4"
-            author={comment.author}
-            comment={comment.comment}
-            commentTime={comment.commentTime}
-            like={comment.like}
-            replay={comment.replay}
-            key={comment.id}
-            image={comment.image}
-            href={comment.href}
-            dictionary={dictionary}
-          />
-        );
-      })}
+      {data.map((comment) => (
+        <SingleComment
+          className="mt-4"
+          author={comment.author}
+          comment={comment.comment}
+          commentTime={comment.commentTime}
+          like={comment.like}
+          key={comment.id}
+          image={comment.image}
+          href={comment.href}
+          dictionary={dictionary}
+        />
+      ))}
     </div>
   );
 }
+export default React.memo(Comments, isEqual);
