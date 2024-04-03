@@ -4,6 +4,7 @@ import AppIcon from "@/components/common/AppIcon";
 import { Button } from "@/components/ui/button";
 
 import { CategoryEntity } from "@/types/categories";
+import { LocaleKeys } from "@/types/locales";
 
 import HeaderContent from "./HeaderContent";
 
@@ -19,51 +20,38 @@ interface Props {
   linkAuthor: string;
   categories: CategoryEntity[];
   content: string;
+  dictionary: LocaleKeys;
 }
 
-const data: Props = {
-  articleImage:
-    "https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fomji0h8jywa38qhojfoj.jpg",
-  authorName: "Toby Farley",
-  nickname: "Shadow Chicken",
-  postingTime: "26 thg 3",
-  title: "A Case for Hungarian Notation in JavaScript",
-  linkAuthor: "author",
-  authorAvatar:
-    "https://media.dev.to/cdn-cgi/image/width=50,height=50,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F74972%2F734aa60b-1b94-4e87-98b7-63f2332deff3.png",
-  categories: [
-    { name: "review", _id: "1213" },
-    { name: "javascript", _id: "1213" },
-    { name: "typescript", _id: "1213" },
-  ],
-  content: `
-    <div>
-      <h1>Đây là một ví dụ về khung mã:</h1>
-      <pre><code>
-        function helloWorld() {
-          console.log(Hello world !;);
-        }
-        helloWorld();
-      </code></pre>
-    </div>
-    `,
-};
+function Content(props: Props) {
+  const {
+    dictionary,
+    articleImage,
+    authorName,
+    nickname,
+    postingTime,
+    title,
+    authorAvatar,
+    linkAuthor,
+    categories,
+    content,
+  } = props;
 
-function Content() {
   return (
     <div>
       <HeaderContent
-        articleImage={data.articleImage}
-        authorName={data.authorName}
-        nickname={data.nickname}
-        postingTime={data.postingTime}
-        title={data.title}
-        authorAvatar={data.authorAvatar}
-        linkAuthor={data.linkAuthor}
-        categories={data.categories}
+        articleImage={articleImage}
+        authorName={authorName}
+        nickname={nickname}
+        postingTime={postingTime}
+        title={title}
+        authorAvatar={authorAvatar}
+        linkAuthor={linkAuthor}
+        categories={categories}
+        dictionary={dictionary}
       />
 
-      <div className="px-14 pt-8">{parse(data.content)}</div>
+      <div className="px-14 pt-8">{parse(content)}</div>
 
       <div className="mt-8 flex justify-between border-b-2 border-t-2 border-secondary text-slate-500">
         <div className="mx-8">

@@ -1,9 +1,11 @@
 import React from "react";
+import isEqual from "react-fast-compare";
 import Image from "next/image";
 
 import AppLink from "@/components/common/AppLink";
 
 import { CategoryEntity } from "@/types/categories";
+import { LocaleKeys } from "@/types/locales";
 
 import ReactionArticle from "../ReactionArticle";
 import TagArticle from "../TagArticle";
@@ -17,6 +19,7 @@ interface Props {
   authorAvatar: string;
   linkAuthor: string;
   categories: CategoryEntity[];
+  dictionary: LocaleKeys;
 }
 
 function HeaderContent(props: Props) {
@@ -29,13 +32,14 @@ function HeaderContent(props: Props) {
     authorAvatar,
     linkAuthor,
     categories,
+    dictionary,
   } = props;
 
   return (
     <header>
       <Image
         src={articleImage}
-        alt="article image"
+        alt={dictionary["Article Image"]}
         className="h-auto w-full rounded-md"
         width={0}
         height={0}
@@ -79,4 +83,4 @@ function HeaderContent(props: Props) {
   );
 }
 
-export default React.memo(HeaderContent);
+export default React.memo(HeaderContent, isEqual);
