@@ -4,8 +4,8 @@ import { clsx } from "clsx";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
-import Footer from "@/components/layout/footer";
-import Header from "@/components/layout/header";
+import Footer from "@/components/layout/m-footer";
+import Header from "@/components/layout/m-header";
 
 import { getDictionary } from "@/dictionaries/get-dictionary";
 import { i18n } from "@/dictionaries/i18n-config";
