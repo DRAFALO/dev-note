@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import isEqual from "react-fast-compare";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -36,4 +37,4 @@ function ModalContact() {
   );
 }
 
-export default React.memo(ModalContact);
+export default React.memo(ModalContact, isEqual);

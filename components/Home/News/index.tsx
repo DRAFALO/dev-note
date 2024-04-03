@@ -1,7 +1,7 @@
 import React from "react";
 
-import CardSingleBlog from "@/components/CardBlogItem";
-import AppSectionTitle from "@/components/common/AppSectionTitle";
+import CardSingleBlog from "@/components/card-blog-item";
+import AppSectionTitle from "@/components/common/app-section-title";
 
 import { randomId } from "@/lib/randomId";
 import { cn } from "@/lib/utils";

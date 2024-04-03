@@ -1,10 +1,10 @@
 import React from "react";
 
-import ArticlePopular from "@/components/ArticlePopular";
-import AboutMyTeam from "@/components/Home/AboutMyTeam";
-import Category from "@/components/Home/Category";
-import HeroBanner from "@/components/Home/HeroBanner";
-import News from "@/components/Home/News";
+import ArticlePopular from "@/components/article-popular";
+import AboutMyTeam from "@/components/home/about-my-team";
+import Category from "@/components/home/category";
+import HeroBanner from "@/components/home/hero-banner";
+import News from "@/components/home/news";
 
 import { getDictionary } from "@/dictionaries/get-dictionary";
 import { fetchCategories } from "@/services/category";

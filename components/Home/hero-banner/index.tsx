@@ -1,10 +1,11 @@
 "use client";
 
 import React from "react";
+import isEqual from "react-fast-compare";
 import Slider from "react-slick";
 import Image from "next/image";
 
-import AppLink from "@/components/common/AppLink";
+import AppLink from "@/components/common/app-link";
 
 import { SLIDE_AUTOPLAY_TIME } from "@/constants/slide";
 import { randomId } from "@/lib/randomId";
@@ -84,4 +85,4 @@ function HeroBanner() {
   );
 }
 
-export default React.memo(HeroBanner);
+export default React.memo(HeroBanner, isEqual);

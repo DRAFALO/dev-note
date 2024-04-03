@@ -1,10 +1,11 @@
 import React from "react";
+import isEqual from "react-fast-compare";
 
 import { cn } from "@/lib/utils";
 import { LocaleKeys } from "@/types/locales";
 
-import AppLink from "../AppLink";
-import AppSVGIcon from "../AppSVGIcon";
+import AppIcon from "../app-icon";
+import AppLink from "../app-link";
 
 import sx from "./AppSectionTitle.module.scss";
 
@@ -30,7 +31,7 @@ function AppSectionTitle(props: Props) {
         >
           {dictionary["See more"]}
 
-          <AppSVGIcon
+          <AppIcon
             src="/svg/chevron-right.svg#id"
             aria-label={dictionary["See more"]}
           />
@@ -40,4 +41,4 @@ function AppSectionTitle(props: Props) {
   );
 }
 
-export default React.memo(AppSectionTitle);
+export default React.memo(AppSectionTitle, isEqual);

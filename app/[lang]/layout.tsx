@@ -4,8 +4,8 @@ import { clsx } from "clsx";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
-import Footer from "@/components/layout/Footer";
-import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/footer";
+import Header from "@/components/layout/header";
 
 import { getDictionary } from "@/dictionaries/get-dictionary";
 import { i18n } from "@/dictionaries/i18n-config";
@@ -39,7 +39,7 @@ async function RootLayout({
       <body
         className={clsx(
           inter.variable,
-          "min-h-[100dvh] transition duration-300",
+          "flex min-h-[100dvh] flex-col transition duration-300",
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="light">

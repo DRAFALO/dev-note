@@ -1,9 +1,10 @@
 "use client";
 
 import React from "react";
+import isEqual from "react-fast-compare";
 import { useTheme } from "next-themes";
 
-import AppSVGIcon from "@/components/common/AppSVGIcon";
+import AppIcon from "@/components/common/app-icon";
 
 import { LocaleKeys } from "@/types/locales";
 
@@ -31,7 +32,7 @@ function ThemeToggle(props: Props) {
         className="hidden"
       />
 
-      <AppSVGIcon
+      <AppIcon
         src="/svg/sun.svg#id"
         aria-label={dictionary["Turn on the light"]}
         width={20}
@@ -42,4 +43,4 @@ function ThemeToggle(props: Props) {
   );
 }
 
-export default React.memo(ThemeToggle);
+export default React.memo(ThemeToggle, isEqual);

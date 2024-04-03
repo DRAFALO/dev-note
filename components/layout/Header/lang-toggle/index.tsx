@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import isEqual from "react-fast-compare";
 import { usePathname, useRouter } from "next/navigation";
 
 import {
@@ -53,4 +54,4 @@ function LangToggle(props: LangToggleProps) {
   );
 }
 
-export default React.memo(LangToggle);
+export default React.memo(LangToggle, isEqual);

@@ -2,7 +2,7 @@ import React from "react";
 import isEqual from "react-fast-compare";
 import Image from "next/image";
 
-import AppLink from "@/components/common/AppLink";
+import AppLink from "@/components/common/app-link";
 
 import { cn } from "@/lib/utils";
 

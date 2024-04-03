@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import isEqual from "react-fast-compare";
 import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
@@ -9,10 +10,10 @@ import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import { randomId } from "@/lib/randomId";
 import { LocaleKeys } from "@/types/locales";
 
-import AppSVGIcon from "../../common/AppSVGIcon";
+import AppIcon from "../../common/app-icon";
 
-import Member from "./Member";
-import ModalContact from "./ModalContact";
+import Member from "./member";
+import ModalContact from "./modal-contact";
 
 const members = [
   {
@@ -69,7 +70,7 @@ function AboutMyTeam(props: Props) {
               <Dialog>
                 <Button className="flex items-center " asChild>
                   <DialogTrigger>
-                    <AppSVGIcon
+                    <AppIcon
                       src="/svg/message-square.svg#id"
                       aria-label={dictionary["Contact now"]}
                     />
@@ -88,4 +89,4 @@ function AboutMyTeam(props: Props) {
   );
 }
 
-export default React.memo(AboutMyTeam);
+export default React.memo(AboutMyTeam, isEqual);

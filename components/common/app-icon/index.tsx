@@ -1,9 +1,10 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from "react";
+import isEqual from "react-fast-compare";
 
 import { cn } from "@/lib/utils";
 
-interface AppSVGIconProps {
+interface AppIconProps {
   src: string;
   className?: string;
   width?: number;
@@ -11,7 +12,7 @@ interface AppSVGIconProps {
   ["aria-label"]: string;
 }
 
-function AppSVGIcon(props: AppSVGIconProps) {
+function AppIcon(props: AppIconProps) {
   const { src, className = "", width = 20, height = width, ...other } = props;
 
   return (
@@ -26,4 +27,4 @@ function AppSVGIcon(props: AppSVGIconProps) {
   );
 }
 
-export default React.memo(AppSVGIcon);
+export default React.memo(AppIcon, isEqual);

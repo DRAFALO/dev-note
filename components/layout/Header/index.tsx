@@ -1,11 +1,12 @@
 "use client";
 
 import React from "react";
+import isEqual from "react-fast-compare";
 import Image from "next/image";
 import { useBoolean, useEventListener } from "usehooks-ts";
 
-import AppLink from "@/components/common/AppLink";
-import LangToggle from "@/components/layout/Header/LangToggle";
+import AppLink from "@/components/common/app-link";
+import LangToggle from "@/components/layout/header/lang-toggle";
 
 import { ROUTES } from "@/constants/routes";
 import { cn } from "@/lib/utils";
@@ -63,4 +64,4 @@ function Header(props: NavBarProps) {
   );
 }
 
-export default React.memo(Header);
+export default React.memo(Header, isEqual);

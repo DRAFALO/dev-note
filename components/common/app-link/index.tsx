@@ -3,6 +3,7 @@
 "use client";
 
 import React from "react";
+import isEqual from "react-fast-compare";
 import Link, { LinkProps } from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -44,4 +45,4 @@ function AppLink(props: React.PropsWithChildren<AppLinkProps>) {
   );
 }
 
-export default React.memo(AppLink);
+export default React.memo(AppLink, isEqual);

@@ -24,6 +24,7 @@ function Category(props: Props) {
       <div className=" flex flex-wrap gap-3">
         {categories.map((category) => (
           <Button key={category.name} variant="hashtag" asChild>
+            {/* Change to AppLink */}
             <Link
               href={{
                 pathname: ROUTES.BLOG.LINK,

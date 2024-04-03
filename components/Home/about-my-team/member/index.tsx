@@ -1,8 +1,9 @@
 import React from "react";
+import isEqual from "react-fast-compare";
 import Image from "next/image";
 
-import AppLink from "@/components/common/AppLink";
-import AppSVGIcon from "@/components/common/AppSVGIcon";
+import AppIcon from "@/components/common/app-icon";
+import AppLink from "@/components/common/app-link";
 
 function Member(props: any) {
   const { member } = props;
@@ -26,7 +27,7 @@ function Member(props: any) {
 
         <div className="mb-2 flex space-x-2">
           <AppLink href={member.githubLink} aria-label={member.name}>
-            <AppSVGIcon
+            <AppIcon
               src="/svg/github.svg#id"
               aria-label="Github"
               width={25}
@@ -35,7 +36,7 @@ function Member(props: any) {
           </AppLink>
 
           <AppLink href={member.socialLink} aria-label={member.name}>
-            <AppSVGIcon
+            <AppIcon
               src="/svg/globe.svg#id"
               aria-label="Linkedin"
               width={25}
@@ -48,4 +49,4 @@ function Member(props: any) {
   );
 }
 
-export default React.memo(Member);
+export default React.memo(Member, isEqual);

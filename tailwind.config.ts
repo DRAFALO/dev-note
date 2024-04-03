@@ -56,6 +56,13 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+
+        //
+        bg: {
+          blog: {
+            DEFAULT: "#f8f8f8",
+          },
+        },
       },
 
       fontSize: {

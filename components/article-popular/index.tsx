@@ -1,11 +1,12 @@
 "use client";
 
 import React from "react";
+import isEqual from "react-fast-compare";
 
 import { LocaleKeys } from "@/types/locales";
 
-import EditorChoices from "./EditorChoices";
-import Popular from "./Popular";
+import EditorChoices from "./editor-choices";
+import Popular from "./popular";
 
 interface Props {
   dictionary: LocaleKeys;
@@ -26,4 +27,4 @@ function ArticlePopular(props: Props) {
   );
 }
 
-export default React.memo(ArticlePopular);
+export default React.memo(ArticlePopular, isEqual);

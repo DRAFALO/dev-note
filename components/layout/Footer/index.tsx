@@ -1,6 +1,7 @@
 import React from "react";
+import isEqual from "react-fast-compare";
 
-import AppLink from "@/components/common/AppLink";
+import AppLink from "@/components/common/app-link";
 
 import { ROUTES } from "@/constants/routes";
 import { randomId } from "@/lib/randomId";
@@ -81,4 +82,4 @@ function Footer(props: FooterProps) {
   );
 }
 
-export default React.memo(Footer);
+export default React.memo(Footer, isEqual);
