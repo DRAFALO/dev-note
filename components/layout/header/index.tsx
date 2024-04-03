@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useBoolean, useEventListener } from "usehooks-ts";
 
 import AppLink from "@/components/common/app-link";
-import LangToggle from "@/components/layout/m-header/lang-toggle";
+import LangToggle from "@/components/layout/header/lang-toggle";
 
 import { ROUTES } from "@/constants/routes";
 import { cn } from "@/lib/utils";
