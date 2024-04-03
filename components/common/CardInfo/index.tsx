@@ -1,20 +1,20 @@
 import React from "react";
-import {
-  Building2,
-  Clock9,
-  GraduationCap,
-  MapPin,
-  UserRound,
-} from "lucide-react";
+import dayjs from "dayjs";
 import Image from "next/image";
 
 import { cn } from "@/lib/utils";
+import { LocaleKeys } from "@/types/locales";
+
+import AppLink from "../AppLink";
+
+import InformationBody from "./InformationBody";
 
 import sx from "./CardInfo.module.scss";
 
 interface Props {
   avatar: string;
   name: string;
+  dictionary: LocaleKeys;
   location?: string;
   description?: string;
   education?: string;
@@ -22,43 +22,6 @@ interface Props {
   pronouns?: string;
   className?: string;
 }
-
-interface IbodyCardInfo {
-  location?: string;
-  education?: string;
-  pronouns?: string;
-  workPosition?: string;
-  joined?: string;
-}
-
-const bodyCardInfo = ({
-  location,
-  education,
-  pronouns,
-  workPosition,
-  joined,
-}: IbodyCardInfo) => ({
-  location: {
-    icon: <MapPin size={14} />,
-    content: location,
-  },
-  education: {
-    icon: <GraduationCap size={14} />,
-    content: education,
-  },
-  pronouns: {
-    icon: <UserRound size={14} />,
-    content: pronouns,
-  },
-  "work Position": {
-    icon: <Building2 size={14} />,
-    content: workPosition,
-  },
-  joined: {
-    icon: <Clock9 size={14} />,
-    content: joined,
-  },
-});
 
 function CardInfo(props: Props) {
   const {
@@ -70,55 +33,36 @@ function CardInfo(props: Props) {
     location,
     pronouns,
     className = "",
+    dictionary,
   } = props;
 
-  const joined = new Date()
-    .toISOString()
-    .split("T")[0]
-    .split("-")
-    .reverse()
-    .join("/");
-
-  const renderBodyCard = () => {
-    return Object.entries(
-      bodyCardInfo({
-        location,
-        education,
-        pronouns,
-        workPosition,
-        joined,
-      }),
-    ).map(([key, value]) => (
-      <div key={key}>
-        <div className="text-description-1 font-semibold uppercase text-slate-300">
-          {key}
-        </div>
-        <div className="flex items-center gap-1 text-description-3 capitalize">
-          {value.icon && <span>{value.icon}</span>}
-          <span>{value.content}</span>
-        </div>
-      </div>
-    ));
-  };
+  const joined = dayjs().format("YYYY-MM-DD");
 
   return (
     <div className={cn(sx.CardInfo, className)}>
       <div className="-mt-4">
-        <a href="/" className="flex items-end">
+        <AppLink href="/" className="flex items-end" aria-label={name}>
           <div className="mr-2 aspect-square h-14 w-14 shrink-0 overflow-hidden rounded-full">
             <Image src={avatar} alt="" width={56} height={56} loading="lazy" />
           </div>
           <span className="mt-5 font-bold">{name}</span>
-        </a>
+        </AppLink>
       </div>
 
       <button type="button" name="button" className={cn(sx.FollowBtn)}>
-        Follow
+        {dictionary.Follow}
       </button>
 
       <div className={cn(sx.DescriptionCard)}>{description}</div>
 
-      <div className="flex flex-col gap-3">{renderBodyCard()}</div>
+      <InformationBody
+        dictionary={dictionary}
+        location={location}
+        education={education}
+        workPosition={workPosition}
+        pronouns={pronouns}
+        joined={joined}
+      />
     </div>
   );
 }
