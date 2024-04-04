@@ -45,7 +45,7 @@ const data = [
 function HeroBanner() {
   return (
     <section className="container my-10">
-      <div className="slider-container px-3">
+      <div className="slider-container">
         {/* eslint-disable-next-line react/jsx-props-no-spreading */}
         <Slider {...settings}>
           {data.map((item, index) => (
