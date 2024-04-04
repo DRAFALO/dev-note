@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import isEqual from "react-fast-compare";
 import { ThemeProvider } from "next-themes";
 import { ThemeProviderProps } from "next-themes/dist/types";
 
@@ -11,4 +12,4 @@ function Provider({ children, ...props }: ThemeProviderProps) {
   );
 }
 
-export default React.memo(Provider);
+export default React.memo(Provider, isEqual);
