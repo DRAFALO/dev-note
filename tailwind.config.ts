@@ -20,6 +20,7 @@ const config: Config = {
       center: true,
       padding: "16px",
     },
+
     extend: {
       colors: {
         border: "hsl(var(--border))",
@@ -75,7 +76,6 @@ const config: Config = {
         "heading-xs": ["0.4rem", { fontWeight: 200 }],
         "description-1": [".8rem", { fontWeight: 200 }],
         "description-2": ["1.2rem", { fontWeight: 200 }],
-        "description-3": ["1rem", { fontWeight: 400 }],
         "big-size": ["4rem", { fontWeight: 600 }],
       },
 
@@ -84,9 +84,7 @@ const config: Config = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
-      borderWidth: {
-        lg: "30px",
-      },
+
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
