@@ -51,7 +51,7 @@ function Comments(props: Props) {
   const { dictionary } = props;
 
   return (
-    <div className="container">
+    <div className="px-14 py-8">
       <HeaderComment
         dictionary={dictionary}
         className="mb-6"
