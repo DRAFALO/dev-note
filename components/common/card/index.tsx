@@ -16,7 +16,7 @@ export default function Card({
   return (
     <div className="rounded-md border border-slate-200 bg-white">
       {title && (
-        <header className="border-b border-slate-200 px-4 py-1 text-[20px] font-bold">
+        <header className="border-b border-slate-200 px-4 py-1 text-xl font-bold">
           {title}
         </header>
       )}

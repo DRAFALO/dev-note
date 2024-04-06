@@ -29,7 +29,7 @@ export default function ReactionButton({
         aria-label={icon}
       />
       {count ? (
-        <span className="text-[14px] text-gray-500">{count}</span>
+        <span className="text-sm text-gray-500">{count}</span>
       ) : (
         <div>&nbsp;</div>
       )}

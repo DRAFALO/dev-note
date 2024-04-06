@@ -40,7 +40,7 @@ function HeaderContent(props: Props) {
       <Image
         src={articleImage}
         alt={dictionary["Article Image"]}
-        className="h-auto w-full rounded-md"
+        className="h-auto w-full rounded-none"
         width={0}
         height={0}
         sizes="100vw"
