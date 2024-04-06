@@ -1,10 +1,9 @@
 import React from "react";
-import isEqual from "react-fast-compare";
 
-import CardSingleBlog from "@/components/card-blog-item";
 import AppSectionTitle from "@/components/common/app-section-title";
+import CardSingleBlog from "@/components/features/card-blog-item";
 
-import { randomId } from "@/lib/randomId";
+import { randomId } from "@/lib/random-id";
 import { cn } from "@/lib/utils";
 import { LocaleKeys } from "@/types/locales";
 
@@ -44,7 +43,8 @@ const data = [
       " Nearly 200 Great Barrier Reef coral species also live in the deep sea",
     description:
       "There are more coral species lurking in the deep ocean that previously throught.",
-    image: "https://images7.alphacoders.com/129/thumb-440-1299888.webp",
+    image:
+      "https://i.pinimg.com/564x/1c/34/0c/1c340cf030e39aa9d924e9b0418238ec.jpg",
     id: randomId(),
     postingTime: "Dec 12",
     readingTime: "5 min read",
@@ -53,10 +53,11 @@ const data = [
   },
 ];
 
-function EditorChoices(props: Props) {
+function News(props: Props) {
   const { dictionary } = props;
+
   return (
-    <>
+    <section className="container my-10">
       <AppSectionTitle
         dictionary={dictionary}
         title="All Stories"
@@ -77,8 +78,8 @@ function EditorChoices(props: Props) {
           className={cn(!!index && "mt-4")}
         />
       ))}
-    </>
+    </section>
   );
 }
 
-export default React.memo(EditorChoices, isEqual);
+export default News;

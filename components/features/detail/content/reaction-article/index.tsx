@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-import { randomId } from "@/lib/randomId";
+import { randomId } from "@/lib/random-id";
 
 const icons = [
   {

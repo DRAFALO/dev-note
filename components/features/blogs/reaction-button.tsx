@@ -4,7 +4,7 @@ import AppIcon from "@/components/common/app-icon";
 
 import { cn } from "@/lib/utils";
 
-import { Button } from "../ui/button";
+import { Button } from "../../ui/button";
 
 export interface Props {
   icon: string;

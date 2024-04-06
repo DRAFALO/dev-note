@@ -1,8 +1,8 @@
 import React from "react";
 
-import ActionButtons from "@/components/blogs/action-buttons";
-import RelatedBlogs from "@/components/blogs/related-blogs";
 import Card from "@/components/common/card";
+import ActionButtons from "@/components/features/blogs/action-buttons";
+import RelatedBlogs from "@/components/features/blogs/related-blogs";
 
 interface Props {
   children: React.ReactNode;

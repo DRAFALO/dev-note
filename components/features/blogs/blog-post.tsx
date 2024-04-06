@@ -1,10 +1,10 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from "react";
 
-import { randomId } from "@/lib/randomId";
+import { randomId } from "@/lib/random-id";
 import { LocaleKeys } from "@/types/locales";
 
-import Content from "../m-detail/content";
+import Content from "../detail/content";
 
 const fakeData = {
   articleImage:

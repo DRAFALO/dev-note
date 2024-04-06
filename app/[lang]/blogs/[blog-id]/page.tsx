@@ -1,7 +1,7 @@
 import React from "react";
 
-import BlogPost from "@/components/blogs/blog-post";
-import Comment from "@/components/blogs/Comment";
+import BlogPost from "@/components/features/blogs/blog-post";
+import Comment from "@/components/features/blogs/comment";
 
 import { getDictionary } from "@/dictionaries/get-dictionary";
 import { LocaleEnum } from "@/types/locales";

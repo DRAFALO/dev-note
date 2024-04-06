@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/select";
 
 import { i18n } from "@/dictionaries/i18n-config";
-import renderLinkByLocale from "@/lib/renderLinkByLocale";
+import renderLinkByLocale from "@/lib/render-link-by-locale";
 import { LocaleEnum, MappingLocaleEnum } from "@/types/locales";
 
 interface LangToggleProps {

@@ -9,7 +9,7 @@ import Header from "@/components/layout/header";
 
 import { getDictionary } from "@/dictionaries/get-dictionary";
 import { i18n } from "@/dictionaries/i18n-config";
-import ThemeProvider from "@/providers/ThemeProvider";
+import ThemeProvider from "@/providers/theme-provider";
 import { LocaleEnum } from "@/types/locales";
 
 import "./globals.scss";
