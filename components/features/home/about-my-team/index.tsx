@@ -7,10 +7,10 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 
-import { randomId } from "@/lib/randomId";
+import { randomId } from "@/lib/random-id";
 import { LocaleKeys } from "@/types/locales";
 
-import AppIcon from "../../common/app-icon";
+import AppIcon from "../../../common/app-icon";
 
 import Member from "./member";
 import ModalContact from "./modal-contact";

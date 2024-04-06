@@ -4,7 +4,7 @@ import isEqual from "react-fast-compare";
 import AppLink from "@/components/common/app-link";
 
 import { ROUTES } from "@/constants/routes";
-import { randomId } from "@/lib/randomId";
+import { randomId } from "@/lib/random-id";
 import { LocaleKeys } from "@/types/locales";
 
 interface FooterProps {

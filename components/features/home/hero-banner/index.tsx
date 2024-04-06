@@ -8,7 +8,7 @@ import Image from "next/image";
 import AppLink from "@/components/common/app-link";
 
 import { SLIDE_AUTOPLAY_TIME } from "@/constants/slide";
-import { randomId } from "@/lib/randomId";
+import { randomId } from "@/lib/random-id";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";

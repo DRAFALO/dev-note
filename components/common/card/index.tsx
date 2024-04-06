@@ -1,4 +1,5 @@
 import * as React from "react";
+import isEqual from "react-fast-compare";
 
 import { cn } from "@/lib/utils";
 
@@ -8,15 +9,13 @@ export interface Props {
   title?: React.ReactNode | string;
 }
 
-export default function Card({
-  children,
-  title,
-  className = "",
-}: Readonly<Props>) {
+function Card(props: Props) {
+  const { children, className, title } = props;
+
   return (
     <div className="rounded-md border border-slate-200 bg-white">
       {title && (
-        <header className="border-b border-slate-200 px-4 py-1 text-[20px] font-bold">
+        <header className="border-b border-slate-200 px-4 py-1 text-xl font-bold">
           {title}
         </header>
       )}
@@ -24,3 +23,5 @@ export default function Card({
     </div>
   );
 }
+
+export default React.memo(Card, isEqual);
