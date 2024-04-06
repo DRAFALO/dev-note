@@ -54,7 +54,7 @@ function BlogPost(props: Props) {
   } = fakeData;
 
   return (
-    <div className="overflow-hidden rounded bg-white">
+    <>
       <HeaderContent
         articleImage={articleImage}
         authorName={authorName}
@@ -92,7 +92,7 @@ function BlogPost(props: Props) {
           </Button>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

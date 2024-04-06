@@ -3,8 +3,8 @@ import React from "react";
 import Card from "@/components/common/card";
 import ActionButtons from "@/components/features/blogs/action-buttons";
 import BlogPost from "@/components/features/blogs/blog-post";
-import Comment from "@/components/features/blogs/comment";
 import RelatedBlogs from "@/components/features/blogs/related-blogs";
+import Comment from "@/components/features/comment";
 
 import { getDictionary } from "@/dictionaries/get-dictionary";
 import { LocaleEnum } from "@/types/locales";
@@ -21,7 +21,7 @@ async function BlogDetailPage({
       <div className="container flex gap-4">
         <ActionButtons />
 
-        <div className="flex min-h-[500px] flex-1 flex-col gap-2">
+        <div className="flex min-h-[500px] flex-1 flex-col gap-2 overflow-hidden bg-white">
           <BlogPost dictionary={dictionary} />
 
           <Comment dictionary={dictionary} />
