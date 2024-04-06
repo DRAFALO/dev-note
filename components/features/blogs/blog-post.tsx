@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from "react";
+import isEqual from "react-fast-compare";
 import parse from "html-react-parser";
 
 import AppIcon from "@/components/common/app-icon";
@@ -95,4 +96,4 @@ function BlogPost(props: Props) {
   );
 }
 
-export default BlogPost;
+export default React.memo(BlogPost, isEqual);

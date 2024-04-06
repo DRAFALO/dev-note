@@ -1,4 +1,5 @@
 import React from "react";
+import isEqual from "react-fast-compare";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
@@ -40,4 +41,4 @@ function Category(props: Props) {
   );
 }
 
-export default Category;
+export default React.memo(Category, isEqual);

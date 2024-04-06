@@ -1,4 +1,5 @@
 import React from "react";
+import isEqual from "react-fast-compare";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
@@ -31,4 +32,4 @@ function TagArticle(props: Props) {
   );
 }
 
-export default React.memo(TagArticle);
+export default React.memo(TagArticle, isEqual);

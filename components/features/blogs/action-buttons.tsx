@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import isEqual from "react-fast-compare";
 import { useMediaQuery } from "usehooks-ts";
 
 import { MEDIA_MAX_WIDTH } from "@/constants/media-query";
@@ -51,4 +52,4 @@ function ActionButtons() {
   return isMobile ? <ActionButtonsMobile /> : <ActionButtonsDesktop />;
 }
 
-export default ActionButtons;
+export default React.memo(ActionButtons, isEqual);

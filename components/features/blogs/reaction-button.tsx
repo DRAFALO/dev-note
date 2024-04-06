@@ -1,4 +1,5 @@
 import * as React from "react";
+import isEqual from "react-fast-compare";
 
 import AppIcon from "@/components/common/app-icon";
 
@@ -12,11 +13,7 @@ export interface Props {
   className?: string;
 }
 
-export default function ReactionButton({
-  icon,
-  count,
-  className = "",
-}: Readonly<Props>) {
+function ReactionButton({ icon, count, className = "" }: Readonly<Props>) {
   return (
     <Button
       type="button"
@@ -36,3 +33,5 @@ export default function ReactionButton({
     </Button>
   );
 }
+
+export default React.memo(ReactionButton, isEqual);

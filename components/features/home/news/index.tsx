@@ -1,4 +1,5 @@
 import React from "react";
+import isEqual from "react-fast-compare";
 
 import AppSectionTitle from "@/components/common/app-section-title";
 import CardSingleBlog from "@/components/features/card-blog-item";
@@ -82,4 +83,4 @@ function News(props: Props) {
   );
 }
 
-export default News;
+export default React.memo(News, isEqual);

@@ -1,4 +1,5 @@
 import React from "react";
+import isEqual from "react-fast-compare";
 import Image from "next/image";
 
 import { randomId } from "@/lib/random-id";
@@ -34,4 +35,4 @@ function ReactionArticle() {
   );
 }
 
-export default React.memo(ReactionArticle);
+export default React.memo(ReactionArticle, isEqual);

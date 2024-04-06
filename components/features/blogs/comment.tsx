@@ -1,4 +1,5 @@
 import React from "react";
+import isEqual from "react-fast-compare";
 
 import { LocaleKeys } from "@/types/locales";
 
@@ -12,4 +13,4 @@ function Comment(props: Props) {
   return <div>{dictionary["About my team"]}</div>;
 }
 
-export default Comment;
+export default React.memo(Comment, isEqual);
