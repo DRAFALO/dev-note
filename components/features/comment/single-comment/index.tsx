@@ -1,8 +1,8 @@
 import React from "react";
 import isEqual from "react-fast-compare";
 
-import AppIcon from "@/components/common/AppIcon";
-import AppLink from "@/components/common/AppLink";
+import AppIcon from "@/components/common/app-icon";
+import AppLink from "@/components/common/app-link";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
@@ -10,7 +10,7 @@ import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 import { LocaleKeys } from "@/types/locales";
 
-import ModalSeeMore from "../ModalSeeMore";
+import ModalSeeMore from "../modal-see-more";
 
 interface Props {
   className: string;

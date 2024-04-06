@@ -1,12 +1,12 @@
 import React from "react";
 import isEqual from "react-fast-compare";
 
-import { randomId } from "@/lib/randomId";
+import { randomId } from "@/lib/random-id";
 import { LocaleKeys } from "@/types/locales";
 
-import EditorForm from "./EditorForm";
-import HeaderComment from "./HeaderComment";
-import SingleComment from "./SingleComment";
+import EditorForm from "./editor-form";
+import HeaderComment from "./header-comment";
+import SingleComment from "./single-comment";
 
 interface Props {
   dictionary: LocaleKeys;
