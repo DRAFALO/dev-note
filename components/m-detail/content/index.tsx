@@ -1,12 +1,12 @@
 import React from "react";
 
-import AppIcon from "@/components/common/AppIcon";
+import AppIcon from "@/components/common/app-icon";
 import { Button } from "@/components/ui/button";
 
 import { CategoryEntity } from "@/types/categories";
 import { LocaleKeys } from "@/types/locales";
 
-import HeaderContent from "./HeaderContent";
+import HeaderContent from "./header-content";
 
 const parse = require("html-react-parser").default;
 

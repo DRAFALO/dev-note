@@ -2,13 +2,13 @@ import React from "react";
 import isEqual from "react-fast-compare";
 import Image from "next/image";
 
-import AppLink from "@/components/common/AppLink";
+import AppLink from "@/components/common/app-link";
 
 import { CategoryEntity } from "@/types/categories";
 import { LocaleKeys } from "@/types/locales";
 
-import ReactionArticle from "../ReactionArticle";
-import TagArticle from "../TagArticle";
+import ReactionArticle from "../reaction-article";
+import TagArticle from "../tag-article";
 
 interface Props {
   articleImage: string;

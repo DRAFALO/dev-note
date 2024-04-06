@@ -7,6 +7,7 @@ const nextConfig = {
       "i.pinimg.com",
       "images7.alphacoders.com",
       "media.dev.to",
+      "dev.to",
     ],
   },
 };
