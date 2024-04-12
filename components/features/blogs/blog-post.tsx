@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from "react";
 import isEqual from "react-fast-compare";
-import parse from "html-react-parser";
+import MarkdownIt from "markdown-it";
 
 import AppIcon from "@/components/common/app-icon";
 import { Button } from "@/components/ui/button";
@@ -38,6 +38,8 @@ type Props = {
   dictionary: LocaleKeys;
 };
 
+const mdParser = new MarkdownIt();
+
 function BlogPost(props: Props) {
   const { dictionary } = props;
 
@@ -67,7 +69,7 @@ function BlogPost(props: Props) {
         dictionary={dictionary}
       />
 
-      <div className="px-14 pt-8">{parse(content)}</div>
+      <div className="px-14 pt-8">{mdParser.render(content)}</div>
 
       <div className="mt-8 flex !hidden justify-between border-b-2 border-t-2 border-secondary text-slate-500">
         <div className="mx-8">
