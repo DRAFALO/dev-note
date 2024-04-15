@@ -5,6 +5,7 @@ import ActionButtons from "@/components/features/blogs/action-buttons";
 import BlogPost from "@/components/features/blogs/blog-post";
 import RelatedBlogs from "@/components/features/blogs/related-blogs";
 import Comment from "@/components/features/comment";
+import {Dropdown}  from "@/components/common/dropdown";
 
 import { getDictionary } from "@/dictionaries/get-dictionary";
 import { LocaleEnum } from "@/types/locales";
@@ -15,7 +16,7 @@ async function BlogDetailPage({
   params: { lang: LocaleEnum };
 }) {
   const dictionary = await getDictionary(lang);
-
+ 
   return (
     <section className="bg-bg-blog py-4">
       <div className="container flex gap-4">
@@ -31,6 +32,7 @@ async function BlogDetailPage({
           <Card title="OtherBlogs">
             <RelatedBlogs />
           </Card>
+          <Dropdown dictionary={dictionary} />
         </aside>
       </div>
     </section>
