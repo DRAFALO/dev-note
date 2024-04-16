@@ -1,36 +1,39 @@
+import * as React from "react"
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import { ScrollArea } from "@/components/ui/scroll-area"
 import { LocaleKeys } from "@/types/locales";
+
+interface Content {
+  name: string;
+  link: string;
+}
 
 interface Props {
   dictionary: LocaleKeys;
+  className?: string;
+  title: string;
+  content: Content[];
 }
 
 export function Dropdown(props: Props) {
-     const { dictionary } = props;
+  const { dictionary, title, content } = props;
   return (
     <Accordion type="single" collapsible className="w-full">
       <AccordionItem value="item-1">
-        <AccordionTrigger>Is it accessible?</AccordionTrigger>
+        <AccordionTrigger>{title}</AccordionTrigger>
         <AccordionContent>
-          Yes. It adheres to the WAI-ARIA design pattern.
-        </AccordionContent>
-      </AccordionItem>
-      <AccordionItem value="item-2">
-        <AccordionTrigger>Is it styled?</AccordionTrigger>
-        <AccordionContent>
-          Yes. It comes with default styles that matches the other
-          components&apos; aesthetic.
-        </AccordionContent>
-      </AccordionItem>
-      <AccordionItem value="item-3">
-        <AccordionTrigger>Is it animated?</AccordionTrigger>
-        <AccordionContent>
-          Yes. It's animated by default, but you can disable it if you prefer.
+          <ScrollArea className="h-72 w-48 rounded-md border">
+            <div className="p-4">
+              {content.map((item, index) => (
+                <a key={`link-${index}`} href={item.link}>{item.name}</a>
+              ))}
+            </div>
+          </ScrollArea>
         </AccordionContent>
       </AccordionItem>
     </Accordion>
