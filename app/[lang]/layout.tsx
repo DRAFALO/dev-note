@@ -9,6 +9,7 @@ import Header from "@/components/layout/header";
 
 import { getDictionary } from "@/dictionaries/get-dictionary";
 import { i18n } from "@/dictionaries/i18n-config";
+import GoogleAuthProvider from "@/providers/google-auth-provider";
 import ThemeProvider from "@/providers/theme-provider";
 import { LocaleEnum } from "@/types/locales";
 
@@ -43,13 +44,15 @@ async function RootLayout({
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="light">
-          <div className="flex min-h-screen flex-col">
-            <Header lang={params.lang} dictionary={dictionary} />
+          <GoogleAuthProvider>
+            <div className="flex min-h-screen flex-col">
+              <Header lang={params.lang} dictionary={dictionary} />
 
-            <main className="flex-1">{children}</main>
+              <main className="flex-1">{children}</main>
 
-            <Footer dictionary={dictionary} />
-          </div>
+              <Footer dictionary={dictionary} />
+            </div>
+          </GoogleAuthProvider>
         </ThemeProvider>
       </body>
     </html>

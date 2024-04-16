@@ -1,6 +1,7 @@
 import React from "react";
 
 import ArticlePopular from "@/components/features/article-popular";
+import GoogleAuthButton from "@/components/features/google-auth-button";
 import AboutMyTeam from "@/components/features/home/about-my-team";
 import Category from "@/components/features/home/category";
 import HeroBanner from "@/components/features/home/hero-banner";
@@ -17,6 +18,7 @@ async function Home({ params: { lang } }: { params: { lang: LocaleEnum } }) {
 
   return (
     <>
+      <GoogleAuthButton />
       <HeroBanner />
       <Category dictionary={dictionary} categories={listCategories.data} />
       <ArticlePopular dictionary={dictionary} />
