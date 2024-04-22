@@ -1,11 +1,11 @@
 import React from "react";
 
 import Card from "@/components/common/card";
+import Dropdown from "@/components/common/dropdown";
 import ActionButtons from "@/components/features/blogs/action-buttons";
 import BlogPost from "@/components/features/blogs/blog-post";
 import RelatedBlogs from "@/components/features/blogs/related-blogs";
 import Comment from "@/components/features/comment";
-import Dropdown  from "@/components/common/dropdown";
 
 import { getDictionary } from "@/dictionaries/get-dictionary";
 import { LocaleEnum } from "@/types/locales";
@@ -17,9 +17,21 @@ async function BlogDetailPage({
 }) {
   const dictionary = await getDictionary(lang);
   const dropdownData = [
-    { name: 'Content A', link: '/content-a' },
-    { name: 'Content B', link: '/content-b' },
-    // Thêm nhiều nội dung khác tại đây
+    {
+      dropdownName: "Content A",
+      name: "Son A",
+      link: "/content-a",
+    },
+    {
+      dropdownName: "Content B",
+      name: "Son B",
+      link: "/content-b",
+    },
+    {
+      dropdownName: "Content C",
+      name: "Son C",
+      link: "/content-c",
+    },
   ];
 
   return (
@@ -37,7 +49,7 @@ async function BlogDetailPage({
           <Card title="OtherBlogs">
             <RelatedBlogs />
           </Card>
-          <Dropdown title="Table of Content" dictionary={dictionary} content={dropdownData} />
+          <Dropdown title="Table of Content" dropdownData={dropdownData} />
         </aside>
       </div>
     </section>

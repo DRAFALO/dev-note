@@ -1,41 +1,46 @@
-import * as React from "react"
+import React from "react";
+import isEqual from "react-fast-compare";
+
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion"
-import { ScrollArea } from "@/components/ui/scroll-area"
-import { LocaleKeys } from "@/types/locales";
+} from "@/components/ui/accordion";
 
-interface Content {
-  name: string;
-  link: string;
+export interface DropdownData {
+  name?: string;
+  link?: string;
 }
 
 interface Props {
-  dictionary: LocaleKeys;
-  className?: string;
-  title: string;
-  content: Content[];
+  title?: string;
+  dropdownData: DropdownData[];
 }
 
-export function Dropdown(props: Props) {
-  const { dictionary, title, content } = props;
+function Dropdown(props: Props) {
+  const { title, dropdownData } = props;
   return (
     <Accordion type="single" collapsible className="w-full">
-      <AccordionItem value="item-1">
-        <AccordionTrigger>{title}</AccordionTrigger>
-        <AccordionContent>
-          <ScrollArea className="h-72 w-48 rounded-md border">
-            <div className="p-4">
-              {content.map((item, index) => (
-                <a key={`link-${index}`} href={item.link}>{item.name}</a>
-              ))}
-            </div>
-          </ScrollArea>
+      <AccordionItem value={`item-${title}`}>
+        <AccordionTrigger className="py-2">{title}</AccordionTrigger>
+        <AccordionContent className="max-h-100 w-full rounded-md">
+          <div
+            className="scroll-area"
+            style={{ maxHeight: "50px", overflowY: "auto" }}
+          >
+            {dropdownData.map((realItem) => (
+              <div
+                key={`link-${realItem.name}`}
+                className="hover:border-l-3 w-full border-l-2 py-1 pl-0.5 hover:border-red-500 hover:bg-red-100 hover:text-red-500"
+              >
+                <a href={realItem.link}>{realItem.name}</a>
+              </div>
+            ))}
+          </div>
         </AccordionContent>
       </AccordionItem>
     </Accordion>
-  )
+  );
 }
+export default React.memo(Dropdown, isEqual);

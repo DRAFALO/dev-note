@@ -1,3 +1,4 @@
+import { randomId } from "@/lib/random-id";
 import { APICategoryResponse, CategoryEntity } from "@/types/categories";
 
 // import { PATHES } from "..";
@@ -21,18 +22,18 @@ import { APICategoryResponse, CategoryEntity } from "@/types/categories";
 // }
 
 export const categories: CategoryEntity[] = [
-  { name: "review", _id: "1213" },
-  { name: "javascript", _id: "1213" },
-  { name: "typescript", _id: "1213" },
-  { name: "react", _id: "1213" },
-  { name: "nextjs", _id: "1213" },
-  { name: "tailwindcss", _id: "1213" },
-  { name: "css", _id: "1213" },
-  { name: "html", _id: "1213" },
-  { name: "user experience", _id: "1213" },
-  { name: "state", _id: "1213" },
-  { name: "programming", _id: "1213" },
-  { name: "performance", _id: "1213" },
+  { name: "review", _id: randomId() },
+  { name: "javascript", _id: randomId() },
+  { name: "typescript", _id: randomId() },
+  { name: "react", _id: randomId() },
+  { name: "nextjs", _id: randomId() },
+  { name: "tailwindcss", _id: randomId() },
+  { name: "css", _id: randomId() },
+  { name: "html", _id: randomId() },
+  { name: "user experience", _id: randomId() },
+  { name: "state", _id: randomId() },
+  { name: "programming", _id: randomId() },
+  { name: "performance", _id: randomId() },
 ];
 
 export function fetchCategories(): APICategoryResponse {
