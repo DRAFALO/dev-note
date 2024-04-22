@@ -1,6 +1,7 @@
 import React from "react";
 
 import Card from "@/components/common/card";
+import Dropdown from "@/components/common/dropdown";
 import ActionButtons from "@/components/features/blogs/action-buttons";
 import BlogPost from "@/components/features/blogs/blog-post";
 import RelatedBlogs from "@/components/features/blogs/related-blogs";
@@ -15,6 +16,23 @@ async function BlogDetailPage({
   params: { lang: LocaleEnum };
 }) {
   const dictionary = await getDictionary(lang);
+  const dropdownData = [
+    {
+      dropdownName: "Content A",
+      name: "Son A",
+      link: "/content-a",
+    },
+    {
+      dropdownName: "Content B",
+      name: "Son B",
+      link: "/content-b",
+    },
+    {
+      dropdownName: "Content C",
+      name: "Son C",
+      link: "/content-c",
+    },
+  ];
 
   return (
     <section className="bg-bg-blog py-4">
@@ -31,6 +49,7 @@ async function BlogDetailPage({
           <Card title="OtherBlogs">
             <RelatedBlogs />
           </Card>
+          <Dropdown title="Table of Content" dropdownData={dropdownData} />
         </aside>
       </div>
     </section>
