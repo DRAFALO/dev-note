@@ -1,11 +1,11 @@
 import { APIContactFormResponse, ContactPayload } from "@/types/contacts";
 
-import { PATCHES } from "..";
+import { ENDPOINTS } from "../endpoints";
 
 import { APIContactFormSchema } from "./schema";
 
 export function postContact(payload: ContactPayload) {
-  return fetch(PATCHES.CONTACT, {
+  return fetch(ENDPOINTS.CONTACT, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
